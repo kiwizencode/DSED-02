@@ -13,19 +13,44 @@
 
     <Viewbox Stretch="Fill">
         <Grid>
-            <ListView x:Name="grdUsers" HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="674" Margin="0,300,0,0">
+            <ListView x:Name="grdUsers" HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="674" Margin="0,300,0,0"
+                      SelectionChanged="grdUsers_SelectedIndexChanged">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
                             <GridViewColumn Header="Id" Width="150" DisplayMemberBinding="{Binding Path=ID}"></GridViewColumn>
                             <GridViewColumn Header="First Name" Width="150" DisplayMemberBinding="{Binding Path=FirstName}"></GridViewColumn>
-                            <GridViewColumn Header="Last Name" Width="150" DisplayMemberBinding="{Binding Path=FirstName}"></GridViewColumn>
+                            <GridViewColumn Header="Last Name" Width="150" DisplayMemberBinding="{Binding Path=LastName}"></GridViewColumn>
                             <GridViewColumn Header="Department" Width="150" DisplayMemberBinding="{Binding Path=Department}"></GridViewColumn>
                             <GridViewColumn Header="Sex" Width="50" DisplayMemberBinding="{Binding Path=Sex}"></GridViewColumn>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>
             </ListView>
+            <GroupBox Header="Register new user :" HorizontalAlignment="Left" Height="285" Margin="10,10,0,0" VerticalAlignment="Top" Width="654">
+                <Grid HorizontalAlignment="Left" Height="243" Margin="8,10,-2.4,0" VerticalAlignment="Top" Width="636">
+                    <Label Content="First Name:" HorizontalAlignment="Left" Height="41" Margin="14,20,0,0" VerticalAlignment="Top" Width="86"/>
+                    <Label Content="Last Name:" HorizontalAlignment="Left" Height="34" Margin="16,60,0,0" VerticalAlignment="Top" Width="94"/>
+                    <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="31" Margin="126,19,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245"/>
+                    <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="124,64,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="247"/>
+                    <Label Content="ID:" HorizontalAlignment="Left" Height="30" Margin="18,104,0,0" VerticalAlignment="Top" Width="60"/>
+                    <Label Content="Department:" HorizontalAlignment="Left" Height="34" Margin="18,144,0,0" VerticalAlignment="Top" Width="103"/>
+                    <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="31" Margin="121,103,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="250"/>
+                    <TextBox x:Name="txtDepartment" HorizontalAlignment="Left" Height="34" Margin="121,144,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="250"/>
+                    <GroupBox Header="Sex" HorizontalAlignment="Left" Height="50" Margin="18,183,0,0" VerticalAlignment="Top" Width="353">
+                        <Grid HorizontalAlignment="Left" Height="38" Margin="-1,-9,0,-6.6" VerticalAlignment="Top" Width="338">
+                            <RadioButton x:Name="rdMale" Content="Male" HorizontalAlignment="Left" Height="28" Margin="39,6,0,0" VerticalAlignment="Top" Width="108"/>
+                            <RadioButton x:Name="rdFemale" Content="Female" HorizontalAlignment="Left" Height="28" Margin="164,8,0,0" VerticalAlignment="Top" Width="120"/>
+                        </Grid>
+                    </GroupBox>
+                    <Button x:Name="btnAdd" Content="_Add New User" HorizontalAlignment="Left" Height="39" Margin="422,22,0,0" VerticalAlignment="Top" Width="152"
+                            Click="btnAdd_Click"/>
+                    <Button x:Name="btnRemove" Content="Remove User" HorizontalAlignment="Left" Height="43" Margin="422,74,0,0" VerticalAlignment="Top" Width="152"
+                            Click="btnRemove_Click"/>
+                    <Button x:Name="btnRegister" Content="Register User" HorizontalAlignment="Left" Height="50" Margin="422,183,0,0" VerticalAlignment="Top" Width="152"
+                            Click="btnRegister_Click"/>
+                </Grid>
+            </GroupBox>
         </Grid>
     </Viewbox>
 </Window>

@@ -23,6 +23,48 @@ namespace UserInformationManagerMVC.WPF
     /// </summary>
     public partial class MainWindow : Window, IUsersView
     {
+        UsersController _controller;
+
+        public string ID
+        {
+            get { return this.txtID.Text; }
+            set { this.txtID.Text = value; }
+        }
+        public string FirstName
+        {
+            get { return this.txtFirstName.Text; }
+            set { this.txtFirstName.Text = value; }
+        }
+        public string LastName
+        {
+            get { return this.txtLastName.Text; }
+            set { this.txtLastName.Text = value; }
+        }
+        public string Department
+        {
+            get { return this.txtDepartment.Text; }
+            set { this.txtDepartment.Text = value; }
+        }
+        public User.SexOfPerson Sex
+        {
+            get
+            {
+                if (this.rdMale.IsChecked == true)
+                    return User.SexOfPerson.Male;
+                else
+                    return User.SexOfPerson.Female;
+            }
+            set
+            {
+                if (value == User.SexOfPerson.Male)
+                    this.rdMale.IsChecked = true;
+                else
+                    this.rdFemale.IsChecked = true;
+            }
+        }
+        public bool CanModifyID { set { this.txtID.IsEnabled = value; } }
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -46,14 +88,6 @@ namespace UserInformationManagerMVC.WPF
             _controller.LoadView();
         }
 
-        UsersController _controller;
-
-        public string FirstName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string LastName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Department { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public User.SexOfPerson Sex { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool CanModifyID { set => throw new NotImplementedException(); }
 
         #region Events raised  back to controller
         private void btnAdd_Click(object sender, EventArgs e)
@@ -69,10 +103,14 @@ namespace UserInformationManagerMVC.WPF
             this._controller.Save();
         }
         private void grdUsers_SelectedIndexChanged(object sender, EventArgs e)
-        {/*
+        {           
             if (this.grdUsers.SelectedItems.Count > 0)
-                this._controller.SelectedUserChanged(this.grdUsers.SelectedItems[0].Text);
-                */
+            //    this._controller.SelectedUserChanged(this.grdUsers.SelectedItems[0].Text);
+            {
+                dynamic user = this.grdUsers.SelectedItem;
+                this._controller.SelectedUserChanged(user.ID);
+            }
+                
         }
         #endregion
 
@@ -99,12 +137,35 @@ namespace UserInformationManagerMVC.WPF
 
         public string GetIdOfSelectedUserInGrid()
         {
-            throw new NotImplementedException();
+            //if (this.grdUsers.SelectedItems.Count > 0)
+            //    return this.grdUsers.SelectedItems[0].Text;
+            if( this.grdUsers.SelectedIndex > 0)
+            {
+                dynamic user = this.grdUsers.SelectedItem;
+                return user.ID;
+            }
+            else
+                return "";
         }
 
         public void RemoveUserFromGrid(User user)
         {
-            throw new NotImplementedException();
+            User rowToRemove = null;
+
+            foreach (User row in this.grdUsers.Items)
+            {
+                
+                if (row.ID == user.ID)
+                {
+                    rowToRemove = row;
+                }
+            }
+
+            if (rowToRemove != null)
+            {
+                this.grdUsers.Items.Remove(rowToRemove);
+                this.grdUsers.Focus();
+            }
         }
 
         public void AddUserToGrid(User user)
@@ -138,7 +199,25 @@ namespace UserInformationManagerMVC.WPF
 
         public void UpdateGridWithChangedUser(User user)
         {
-            throw new NotImplementedException();
+            User rowToUpdate = null;
+
+            foreach (User row in this.grdUsers.Items)
+            {
+                if (row.ID == user.ID)
+                {
+                    rowToUpdate = row;
+                }
+            }
+
+            if (rowToUpdate != null)
+            {
+                rowToUpdate.ID = user.ID;
+                rowToUpdate.FirstName = user.FirstName;
+                rowToUpdate.LastName = user.LastName;
+                rowToUpdate.Department = user.Department;
+                rowToUpdate.Sex = user.Sex; //Enum.GetName(typeof(User.SexOfPerson), user.Sex);
+                grdUsers.Items.Refresh();
+            }
         }
 
         #endregion
