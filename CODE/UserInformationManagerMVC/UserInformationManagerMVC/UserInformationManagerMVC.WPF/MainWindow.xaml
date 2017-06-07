@@ -1,0 +1,31 @@
+﻿<Window x:Class="UserInformationManagerMVC.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserInformationManagerMVC.WPF"
+        mc:Ignorable="d"
+        Title="Main Window" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+    </Window.Resources>
+
+    <Viewbox Stretch="Fill">
+        <Grid>
+            <ListView x:Name="grdUsers" HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="674" Margin="0,300,0,0">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Id" Width="150" DisplayMemberBinding="{Binding Path=ID}"></GridViewColumn>
+                            <GridViewColumn Header="First Name" Width="150" DisplayMemberBinding="{Binding Path=FirstName}"></GridViewColumn>
+                            <GridViewColumn Header="Last Name" Width="150" DisplayMemberBinding="{Binding Path=FirstName}"></GridViewColumn>
+                            <GridViewColumn Header="Department" Width="150" DisplayMemberBinding="{Binding Path=Department}"></GridViewColumn>
+                            <GridViewColumn Header="Sex" Width="50" DisplayMemberBinding="{Binding Path=Sex}"></GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </Viewbox>
+</Window>

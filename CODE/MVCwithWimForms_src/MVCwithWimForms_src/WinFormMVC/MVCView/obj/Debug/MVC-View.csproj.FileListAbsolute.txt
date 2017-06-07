@@ -1,0 +1,11 @@
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCView\bin\Debug\MVCView.dll
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCView\bin\Debug\MVCView.pdb
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCView\bin\Debug\MVCController.dll
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCView\bin\Debug\MVCModal.dll
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCView\bin\Debug\MVCController.pdb
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCView\bin\Debug\MVCModal.pdb
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCView\obj\Debug\MVC-View.csprojResolveAssemblyReference.cache
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCView\obj\Debug\WinFormMVC.View.UsersView.resources
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCView\obj\Debug\MVC-View.csproj.GenerateResource.Cache
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCView\obj\Debug\MVCView.dll
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCView\obj\Debug\MVCView.pdb

@@ -1,0 +1,5 @@
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCModal\bin\Debug\MVCModal.dll
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCModal\bin\Debug\MVCModal.pdb
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCModal\obj\Debug\MVC-Model.csprojResolveAssemblyReference.cache
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCModal\obj\Debug\MVCModal.dll
+C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\MVCModal\obj\Debug\MVCModal.pdb
