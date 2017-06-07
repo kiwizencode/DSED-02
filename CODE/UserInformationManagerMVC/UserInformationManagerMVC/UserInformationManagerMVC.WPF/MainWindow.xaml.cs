@@ -122,7 +122,18 @@ namespace UserInformationManagerMVC.WPF
 
         public void SetSelectedUserInGrid(User user)
         {
-            throw new NotImplementedException();
+      
+            //foreach (ListViewItem row in this.grdUsers.Items)
+            for(int i = 0; i < this.grdUsers.Items.Count; i++)
+            {
+                dynamic userdata = this.grdUsers.Items[i];
+                if (userdata.ID == user.ID)
+                {
+                    //row.Selected = true;
+                    this.grdUsers.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         public void UpdateGridWithChangedUser(User user)

@@ -45,14 +45,13 @@ namespace UserInformationManagerMVC.Controller
             usr.Sex = _view.Sex;
         }
 
-
         public void LoadView()
         {
             _view.ClearGrid();
             foreach (User usr in _users)
                 _view.AddUserToGrid(usr);
 
-            //_view.SetSelectedUserInGrid((User)_users[0]);
+            _view.SetSelectedUserInGrid((User)_users[0]);
 
         }
 
@@ -70,7 +69,6 @@ namespace UserInformationManagerMVC.Controller
                 }
             }
         }
-
 
         public void AddNewUser()
         {
