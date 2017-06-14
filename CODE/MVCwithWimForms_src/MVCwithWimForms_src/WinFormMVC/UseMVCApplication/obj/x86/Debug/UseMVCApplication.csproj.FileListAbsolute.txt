@@ -11,3 +11,16 @@ C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\Win
 C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\obj\x86\Debug\UseMVCApplication.csproj.GenerateResource.Cache
 C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\obj\x86\Debug\UseMVCApplication.exe
 C:\Users\kiwizen\Desktop\MVC Pattern\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\obj\x86\Debug\UseMVCApplication.pdb
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\bin\Debug\UseMVCApplication.exe
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\bin\Debug\UseMVCApplication.pdb
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\bin\Debug\MVCController.dll
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\bin\Debug\MVCModal.dll
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\bin\Debug\MVCView.dll
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\bin\Debug\MVCController.pdb
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\bin\Debug\MVCModal.pdb
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\bin\Debug\MVCView.pdb
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\obj\x86\Debug\UseMVCApplication.csprojResolveAssemblyReference.cache
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\obj\x86\Debug\UseMVCApplication.Properties.Resources.resources
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\obj\x86\Debug\UseMVCApplication.csproj.GenerateResource.Cache
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\obj\x86\Debug\UseMVCApplication.exe
+C:\Users\EliteBook8730w\Desktop\kiwizen.code-DSED\DSED-02\CODE\MVCwithWimForms_src\MVCwithWimForms_src\WinFormMVC\UseMVCApplication\obj\x86\Debug\UseMVCApplication.pdb
