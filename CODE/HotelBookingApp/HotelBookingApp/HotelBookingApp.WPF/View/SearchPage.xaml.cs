@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HotelBookingApp.Model;
+using System.Collections;
 
 namespace HotelBookingApp.WPF.View
 {
@@ -20,10 +22,35 @@ namespace HotelBookingApp.WPF.View
     /// </summary>
     public partial class SearchPage : Page
     {
+        const string DOUBLE_BED = "DOUBLE BED";
+        const string SINGLE_BED = "SINGLE BED";
         public SearchPage()
         {
             InitializeComponent();
             InitializeGUIControls();
+
+            InitializeDummyData();
+        }
+
+        private void InitializeDummyData()
+        {
+            IList rooms = new ArrayList();
+            rooms.Add(new RoomSetting(1, DOUBLE_BED, 1100f, 2, 1));
+            rooms.Add(new RoomSetting(1, SINGLE_BED, 850f, 1, 1));
+
+            rooms.Add(new RoomSetting(2, DOUBLE_BED, 1100f, 2, 2));
+
+            rooms.Add(new RoomSetting(3, DOUBLE_BED, 1100f, 2, 1));
+            rooms.Add(new RoomSetting(3, SINGLE_BED, 850f, 1, 1));
+
+            rooms.Add(new RoomSetting(4, DOUBLE_BED, 1100f, 2, 2));
+
+            rooms.Add(new RoomSetting(5, DOUBLE_BED, 850f, 1, 4));
+
+            rooms.Add(new RoomSetting(6, SINGLE_BED, 850f, 1, 5));
+
+            MainList.ItemsSource = rooms;
+
         }
 
         private void InitializeGUIControls()

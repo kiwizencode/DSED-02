@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\CODE",
-    "\\CODE\\HotelBookingApp"
+    "\\CODE\\HotelBookingApp",
+    "\\CODE\\UserInformationManagerMVC"
   ],
-  "SelectedNode": "\\CODE\\HotelBookingApp\\HotelBookingApp.sln",
+  "SelectedNode": "\\CODE\\UserInformationManagerMVC\\UserInformationManagerMVC.sln",
   "PreviewInSolutionExplorer": false
 }

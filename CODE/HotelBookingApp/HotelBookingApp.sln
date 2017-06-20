@@ -16,6 +16,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		HotelBookingApp\HotelBookingApp\HotelBookingApp.projitems*{24f530d6-4a8e-4940-8568-12229aa54d75}*SharedItemsImports = 4
+		HotelBookingApp\HotelBookingApp\HotelBookingApp.projitems*{a7c9242d-8d9f-4701-b70f-5da476a21008}*SharedItemsImports = 4
 		HotelBookingApp\HotelBookingApp\HotelBookingApp.projitems*{bed4ca3c-61f7-464f-af5b-0d885bcf087d}*SharedItemsImports = 4
 		HotelBookingApp\HotelBookingApp\HotelBookingApp.projitems*{dfacf623-edd7-4995-b287-578395f4b941}*SharedItemsImports = 13
 	EndGlobalSection

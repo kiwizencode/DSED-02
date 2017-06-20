@@ -24,13 +24,7 @@
                 <DatePicker x:Name="SelectEndDate" HorizontalAlignment="Left" Height="34" Margin="233,76,0,0" VerticalAlignment="Top" Width="166" FontFamily="Segoe Print" FontSize="14"/>
                 <Button Content="Search" HorizontalAlignment="Left" Height="29" Margin="233,116,0,0" VerticalAlignment="Top" Width="165" FontFamily="Segoe Print" FontSize="14"/>
             </Grid>
-            <ListView HorizontalAlignment="Left" Height="160" Margin="19,250,0,0" VerticalAlignment="Top" Width="435">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
+
             <ListView HorizontalAlignment="Left" Height="160" Margin="514,250,0,0" VerticalAlignment="Top" Width="180">
                 <ListView.View>
                     <GridView>
@@ -52,6 +46,13 @@
             <TextBox x:Name="CustomerName" HorizontalAlignment="Left" Height="41" Margin="198,422,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="256" FontFamily="Segoe Print" FontSize="14"/>
             <Button Content="Save" HorizontalAlignment="Left" Height="41" Margin="514,422,0,0" VerticalAlignment="Top" Width="180" FontFamily="Segoe Print" FontSize="14"/>
             <Button Content="Cancel" HorizontalAlignment="Left" Height="39" Margin="514,469,0,0" VerticalAlignment="Top" Width="180" FontFamily="Segoe Print" FontSize="14"/>
+            <ListView x:Name="MainList"  HorizontalAlignment="Left" Height="160" Margin="19,250,0,0" VerticalAlignment="Top" Width="435">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
 
         </Grid>
 

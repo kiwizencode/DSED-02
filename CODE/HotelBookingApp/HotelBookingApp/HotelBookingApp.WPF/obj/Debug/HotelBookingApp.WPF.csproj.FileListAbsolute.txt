@@ -13,6 +13,4 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBoo
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.csproj.GenerateResource.Cache
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.exe
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.pdb
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\View\CalenderPage.g.cs
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\View\CalenderPage.baml
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.csprojResolveAssemblyReference.cache
