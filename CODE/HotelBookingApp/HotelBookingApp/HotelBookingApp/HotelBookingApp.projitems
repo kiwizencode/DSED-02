@@ -9,6 +9,6 @@
     <Import_RootNamespace>HotelBookingApp</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\RoomSetting.cs" />
   </ItemGroup>
 </Project>
