@@ -20,20 +20,18 @@
                 <Label Content="End Date:" HorizontalAlignment="Left" Height="34" Margin="10,76,0,0" VerticalAlignment="Top" Width="132" FontFamily="Segoe Print" FontSize="14"/>
                 <Label Content="Start Date:" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="131" Margin="11,45,0,0" FontFamily="Segoe Print" FontSize="14"/>
                 <TextBox x:Name="NoOfGuest"  HorizontalAlignment="Left" Height="30" Margin="235,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="102" FontFamily="Segoe Print" FontSize="14"/>
-                <DatePicker x:Name="SelectStartDate" HorizontalAlignment="Left" Height="36" Margin="232,48,0,0" VerticalAlignment="Top" Width="166" FontFamily="Segoe Print" FontSize="14"
-                            SelectedDateChanged="SelectStartDate_Changed"/>
-                <DatePicker x:Name="SelectEndDate" HorizontalAlignment="Left" Height="34" Margin="233,76,0,0" VerticalAlignment="Top" Width="166" FontFamily="Segoe Print" FontSize="14"
-                            SelectedDateChanged="SelectEndDate_Changed"/>
+                <DatePicker x:Name="SelectStartDate" HorizontalAlignment="Left" Height="36" Margin="232,48,0,0" VerticalAlignment="Top" Width="166" FontFamily="Segoe Print" FontSize="14"/>
+                <DatePicker x:Name="SelectEndDate" HorizontalAlignment="Left" Height="34" Margin="233,76,0,0" VerticalAlignment="Top" Width="166" FontFamily="Segoe Print" FontSize="14"/>
                 <Button Content="Search" HorizontalAlignment="Left" Height="29" Margin="233,116,0,0" VerticalAlignment="Top" Width="165" FontFamily="Segoe Print" FontSize="14"/>
             </Grid>
-            <ListView HorizontalAlignment="Left" Height="252" Margin="19,250,0,0" VerticalAlignment="Top" Width="435">
+            <ListView HorizontalAlignment="Left" Height="160" Margin="19,250,0,0" VerticalAlignment="Top" Width="435">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <ListView HorizontalAlignment="Left" Height="170" Margin="514,250,0,0" VerticalAlignment="Top" Width="180">
+            <ListView HorizontalAlignment="Left" Height="160" Margin="514,250,0,0" VerticalAlignment="Top" Width="180">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
@@ -50,6 +48,10 @@
                 </Label.Content>
             </Label>
             <TextBox x:Name="GuestNotAllocated" HorizontalAlignment="Left" Height="32" Margin="271,196,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="79" FontFamily="Segoe Print" FontSize="14"/>
+            <Label Content="Who booked the room:" HorizontalAlignment="Left" Height="41" Margin="19,422,0,0" VerticalAlignment="Top" Width="174" FontFamily="Segoe Print" FontSize="14"/>
+            <TextBox x:Name="CustomerName" HorizontalAlignment="Left" Height="41" Margin="198,422,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="256" FontFamily="Segoe Print" FontSize="14"/>
+            <Button Content="Save" HorizontalAlignment="Left" Height="41" Margin="514,422,0,0" VerticalAlignment="Top" Width="180" FontFamily="Segoe Print" FontSize="14"/>
+            <Button Content="Cancel" HorizontalAlignment="Left" Height="39" Margin="514,469,0,0" VerticalAlignment="Top" Width="180" FontFamily="Segoe Print" FontSize="14"/>
 
         </Grid>
 

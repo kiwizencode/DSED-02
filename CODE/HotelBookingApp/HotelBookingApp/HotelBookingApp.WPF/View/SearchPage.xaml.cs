@@ -30,22 +30,10 @@ namespace HotelBookingApp.WPF.View
         {
             NoOfGuest.Text = "";
             GuestNotAllocated.Text = "";
+            CustomerName.Text = "";
             SelectCalendar.SelectedDate = DateTime.Now;
         }
-
         
-        private void SelectStartDate_Changed(object sender, SelectionChangedEventArgs e)
-        {
-            DatePicker picker = sender as DatePicker;
-            //SelectCalendar.DisplayDateStart = picker.SelectedDate;
-        }
-
-        private void SelectEndDate_Changed(object sender, SelectionChangedEventArgs e)
-        {
-            DatePicker picker = sender as DatePicker;
-            //SelectCalendar.DisplayDateEnd = picker.SelectedDate;
-        }
-
         private void SelectCalender_Changed(object sender, SelectionChangedEventArgs e)
         {
             Calendar obj = sender as Calendar;
