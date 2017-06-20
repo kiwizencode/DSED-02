@@ -15,7 +15,7 @@
                           SelectionMode="SingleRange"
                           SelectedDatesChanged="SelectCalender_Changed"/>
             </Viewbox>
-            <Grid HorizontalAlignment="Left" Height="156" Margin="19,20,0,0" VerticalAlignment="Top" Width="435">
+            <Grid HorizontalAlignment="Left" Height="208" Margin="19,20,0,0" VerticalAlignment="Top" Width="435">
                 <Label Content="Enter the number of guests:" HorizontalAlignment="Left" Height="34" Margin="10,10,0,0" VerticalAlignment="Top" Width="215" FontFamily="Segoe Print" FontSize="14"/>
                 <Label Content="End Date:" HorizontalAlignment="Left" Height="34" Margin="10,76,0,0" VerticalAlignment="Top" Width="132" FontFamily="Segoe Print" FontSize="14"/>
                 <Label Content="Start Date:" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="131" Margin="11,45,0,0" FontFamily="Segoe Print" FontSize="14"/>
@@ -24,7 +24,7 @@
                             SelectedDateChanged="SelectStartDate_Changed"/>
                 <DatePicker x:Name="SelectEndDate" HorizontalAlignment="Left" Height="34" Margin="233,76,0,0" VerticalAlignment="Top" Width="166" FontFamily="Segoe Print" FontSize="14"
                             SelectedDateChanged="SelectEndDate_Changed"/>
-                <Button Content="Button" HorizontalAlignment="Left" Height="29" Margin="233,116,0,0" VerticalAlignment="Top" Width="165" FontFamily="Segoe Print" FontSize="14"/>
+                <Button Content="Search" HorizontalAlignment="Left" Height="29" Margin="233,116,0,0" VerticalAlignment="Top" Width="165" FontFamily="Segoe Print" FontSize="14"/>
             </Grid>
             <ListView HorizontalAlignment="Left" Height="252" Margin="19,250,0,0" VerticalAlignment="Top" Width="435">
                 <ListView.View>
@@ -33,6 +33,23 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+            <ListView HorizontalAlignment="Left" Height="170" Margin="514,250,0,0" VerticalAlignment="Top" Width="180">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <!-- show ">>" on the button -->
+            <Button Content="&gt;&gt;" HorizontalAlignment="Left" Height="35" Margin="464,279,0,0" VerticalAlignment="Top" Width="33"/>
+            <!-- show "<<" on the button -->
+            <Button Content="&lt;&lt;" HorizontalAlignment="Left" Height="36" Margin="464,338,0,0" VerticalAlignment="Top" Width="33"/>
+            <Label HorizontalAlignment="Left" Height="58" Margin="102,180,0,0" VerticalAlignment="Top" Width="164" FontFamily="Segoe Print" FontSize="14">
+                <Label.Content>
+                    <AccessText TextWrapping="Wrap" Text="No. of guests not allocated to room:"/>
+                </Label.Content>
+            </Label>
+            <TextBox x:Name="GuestNotAllocated" HorizontalAlignment="Left" Height="32" Margin="271,196,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="79" FontFamily="Segoe Print" FontSize="14"/>
 
         </Grid>
 

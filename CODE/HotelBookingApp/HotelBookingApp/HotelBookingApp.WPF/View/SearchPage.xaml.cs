@@ -29,6 +29,7 @@ namespace HotelBookingApp.WPF.View
         private void InitializeGUIControls()
         {
             NoOfGuest.Text = "";
+            GuestNotAllocated.Text = "";
             SelectCalendar.SelectedDate = DateTime.Now;
         }
 
