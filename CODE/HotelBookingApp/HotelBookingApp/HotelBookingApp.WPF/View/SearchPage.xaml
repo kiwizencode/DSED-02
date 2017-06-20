@@ -42,7 +42,7 @@
                 </Label.Content>
             </Label>
             <TextBox x:Name="GuestNotAllocated" HorizontalAlignment="Left" Height="32" Margin="271,196,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="79" FontFamily="Segoe Print" FontSize="14"/>
-            <Label Content="Who booked the room:" HorizontalAlignment="Left" Height="41" Margin="19,422,0,0" VerticalAlignment="Top" Width="174" FontFamily="Segoe Print" FontSize="14"/>
+            <Label Content="Who makes the booking:" HorizontalAlignment="Left" Height="41" Margin="19,422,0,0" VerticalAlignment="Top" Width="174" FontFamily="Segoe Print" FontSize="14"/>
             <TextBox x:Name="CustomerName" HorizontalAlignment="Left" Height="41" Margin="198,422,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="256" FontFamily="Segoe Print" FontSize="14"/>
             <Button Content="Save" HorizontalAlignment="Left" Height="41" Margin="514,422,0,0" VerticalAlignment="Top" Width="180" FontFamily="Segoe Print" FontSize="14"/>
             <Button Content="Cancel" HorizontalAlignment="Left" Height="39" Margin="514,469,0,0" VerticalAlignment="Top" Width="180" FontFamily="Segoe Print" FontSize="14"/>
