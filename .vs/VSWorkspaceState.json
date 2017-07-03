@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\CODE",
-    "\\CODE\\HotelBookingApp",
+    "\\CODE\\ClientWPF",
+    "\\CODE\\UserInformationManagerMVC",
     "\\DATA"
   ],
-  "SelectedNode": "\\CODE\\HotelBookingApp\\HotelBookingApp.sln",
+  "SelectedNode": "\\CODE\\UserInformationManagerMVC\\UserInformationManagerMVC.sln",
   "PreviewInSolutionExplorer": false
 }
