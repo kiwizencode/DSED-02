@@ -38,16 +38,24 @@ namespace HotelBookingApp.WPF.Controller
         {
             _selected = new BED( ""/*Description*/, 0 /*Max Capacity*/);
 
-            this.updateView(_selected);
+            this.updateViewDetail(_selected);
             this._view.CanModifyID = true;
         }
 
-        private void updateView(ModelBaseClass obj)
+        private void updateViewDetail(ModelBaseClass obj)
         {
             BED selectedUser = obj as BED;
             _view.ID_PK = selectedUser.ID_PK;
             _view.DESCRIPTION = selectedUser.DESCRIPTION;
             _view.MAX_CAPACITY = selectedUser.MAX_CAPACITY;
+        }
+
+        private void updateBedDetail(ModelBaseClass obj)
+        {
+            BED selectedUser = obj as BED;
+            selectedUser.ID_PK = _view.ID_PK;
+            selectedUser.DESCRIPTION = _view.DESCRIPTION.TrimEnd();
+            selectedUser.MAX_CAPACITY = _view.MAX_CAPACITY;
         }
 
         public void SelectedUserChanged(Guid selectedBedId)
@@ -57,7 +65,7 @@ namespace HotelBookingApp.WPF.Controller
                 if (obj.ID_PK == selectedBedId)
                 {
                     _selected = obj;
-                    updateView(obj);
+                    updateViewDetail(obj);
                     _view.SetSelectedInGrid(obj);
                     this._view.CanModifyID = false;
                     break;
@@ -86,6 +94,7 @@ namespace HotelBookingApp.WPF.Controller
                 if (objToRemove != null)
                 {
                     int newSelectedIndex = this._list.IndexOf(objToRemove);
+                    _data.Delete(objToRemove);
                     this._list.Remove(objToRemove);
                     this._view.Remove_From_Grid(objToRemove);
 
@@ -98,16 +107,20 @@ namespace HotelBookingApp.WPF.Controller
         }
         public void Save()
         {
-            updateView(_selected);
+            updateBedDetail(_selected);
             if (!this._list.Contains(_selected))
             {
                 // Add new bed
-                this._list.Add(_selected);
+                this._data.Create(_selected);
+                _list = _data.Retreive();
+                _selected = (BED)_list[_list.Count-1];
+                //this._list.Add(_selected);
                 this._view.Add_To_Grid(_selected);
             }
             else
             {
                 // Update existing bed
+                _data.Update(_selected);
                 this._view.Update_Grid(_selected);
             }
             _view.SetSelectedInGrid(_selected);
