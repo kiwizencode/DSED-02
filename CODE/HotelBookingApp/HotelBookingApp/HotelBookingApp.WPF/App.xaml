@@ -1,7 +1,7 @@
 ﻿<Application x:Class="HotelBookingApp.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="View/SearchPage.xaml">
+             StartupUri="View/MaintainBedPage.xaml">
     <Application.Resources>
 
     </Application.Resources>

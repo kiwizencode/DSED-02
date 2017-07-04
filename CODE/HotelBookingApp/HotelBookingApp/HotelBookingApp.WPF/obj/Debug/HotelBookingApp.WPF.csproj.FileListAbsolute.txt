@@ -14,3 +14,13 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBoo
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.exe
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.pdb
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.csprojResolveAssemblyReference.cache
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Platform.pdb
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\View\MaintainBedPage.g.cs
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\View\MaintainBedPage.baml

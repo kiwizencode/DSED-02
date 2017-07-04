@@ -22,5 +22,9 @@ namespace HotelBookingApp.Model
             Count = data_count;
         }
 
+        public override string ToString()
+        {
+            return "room " + Room_FK + " " + Description + " " + Count;
+        }
     }
 }

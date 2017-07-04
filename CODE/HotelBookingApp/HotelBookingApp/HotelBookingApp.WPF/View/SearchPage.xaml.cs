@@ -67,7 +67,6 @@ namespace HotelBookingApp.WPF.View
             int count = obj.SelectedDates.Count;
             if (count > 0)
             {
-
                 SelectStartDate.SelectedDate = obj.SelectedDates[0];
                 SelectEndDate.SelectedDate = obj.SelectedDates[count-1];
             }
