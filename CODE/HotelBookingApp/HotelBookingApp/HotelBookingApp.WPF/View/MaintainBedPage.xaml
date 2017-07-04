@@ -24,13 +24,13 @@
             </ListView>
             <GroupBox Header="Maintain Bed Information :" HorizontalAlignment="Left" Height="285" Margin="10,10,0,0" VerticalAlignment="Top" Width="654" FontFamily="Segoe Print" FontSize="14">
                 <Grid HorizontalAlignment="Left" Height="243" Margin="8,10,-2.4,0" VerticalAlignment="Top" Width="636">
-                    <Label Content="Description :" HorizontalAlignment="Left" Height="41" Margin="14,20,0,0" VerticalAlignment="Top" Width="86"/>
-                    <Label Content="Max. Capacity :" HorizontalAlignment="Left" Height="34" Margin="14,60,0,0" VerticalAlignment="Top" Width="94"/>
-                    <Label Content="GUID :" HorizontalAlignment="Left" Height="30" Margin="14,104,0,0" VerticalAlignment="Top" Width="60"/>
+                    <Label Content="Description :" HorizontalAlignment="Left" Height="41" Margin="32,18,0,0" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="Max. Capacity :" HorizontalAlignment="Left" Height="34" Margin="14,60,0,0" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="GUID :" HorizontalAlignment="Left" Height="30" Margin="76,100,0,0" VerticalAlignment="Top" Width="60"/>
 
-                    <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="30" Margin="120,19,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245"/>
-                    <TextBox x:Name="txtMax_Capacity" HorizontalAlignment="Left" Height="30" Margin="120,64,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="247"/>
-                    <TextBox x:Name="txtGUID" HorizontalAlignment="Left" Height="30" Margin="120,103,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="250"/>
+                    <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="30" Margin="144,19,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="txtMax_Capacity" HorizontalAlignment="Left" Height="30" Margin="144,64,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="txtGUID" HorizontalAlignment="Left" Height="30" Margin="144,103,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200"/>
 
                     <Button x:Name="btnAdd" Content="Add Bed" HorizontalAlignment="Left" Height="39" Margin="440,14,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnAdd_Click"/>

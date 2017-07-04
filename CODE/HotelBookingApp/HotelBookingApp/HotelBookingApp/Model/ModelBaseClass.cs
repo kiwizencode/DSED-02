@@ -6,5 +6,6 @@ namespace HotelBookingApp.Model
 {
     public abstract class ModelBaseClass
     {
+        public Guid ID_PK;
     }
 }

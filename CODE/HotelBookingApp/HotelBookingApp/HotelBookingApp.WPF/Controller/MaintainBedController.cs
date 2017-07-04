@@ -27,10 +27,10 @@ namespace HotelBookingApp.WPF.Controller
         public void LoadView()
         {
             _view.Clear_Grid();
-            foreach (User usr in _users)
-                _view.AddUserToGrid(usr);
+            foreach (ModelBaseClass obj in _list)
+                _view.Add_To_Grid(obj);
 
-            _view.SetSelectedUserInGrid((User)_users[0]);
+            _view.SetSelectedInGrid((ModelBaseClass)_list[0]);
 
         }
 
@@ -42,8 +42,9 @@ namespace HotelBookingApp.WPF.Controller
             this._view.CanModifyID = true;
         }
 
-        private void updateView(BED selectedUser)
+        private void updateView(ModelBaseClass obj)
         {
+            BED selectedUser = obj as BED;
             _view.ID_PK = selectedUser.ID_PK;
             _view.DESCRIPTION = selectedUser.DESCRIPTION;
             _view.MAX_CAPACITY = selectedUser.MAX_CAPACITY;

@@ -6,10 +6,14 @@ namespace HotelBookingApp.Model
 {
     public partial class BED : ModelBaseClass
     {
-        public Guid ID_PK { get; set; }
+        // public Guid ID_PK { get; set; }
         public string DESCRIPTION { get; set; }
         public int MAX_CAPACITY { get; set; }
 
+        public BED()
+        {
+
+        }
         public BED(string desc, int num)
         {
             DESCRIPTION = desc;

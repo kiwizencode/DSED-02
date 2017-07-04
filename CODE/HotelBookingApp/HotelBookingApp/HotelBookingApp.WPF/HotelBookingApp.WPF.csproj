@@ -66,6 +66,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\IMaintainBedView.cs" />
+    <Compile Include="Controller\IMaintainView.cs" />
     <Compile Include="Controller\MaintainBedController.cs" />
     <Compile Include="Model\RoomSettingModel.cs" />
     <Compile Include="View\MaintainBedPage.xaml.cs">

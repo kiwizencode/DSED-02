@@ -24,10 +24,23 @@ namespace HotelBookingApp.WPF.View
     {
         private MaintainBedController _controller;
 
-        public Guid ID_PK { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string DESCRIPTION { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int MAX_CAPACITY { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool CanModifyID { set => throw new NotImplementedException(); }
+        private Guid _ID;
+        public Guid ID_PK {
+            get => _ID ;
+            set {
+                _ID = value;
+                this.txtGUID.Text = _ID.ToString();
+            }
+        }
+        public string DESCRIPTION {
+            get => txtDescription.Text ;
+            set => txtDescription.Text=value;
+        }
+        public int MAX_CAPACITY {
+            get => int.Parse(txtMax_Capacity.Text);
+            set => txtMax_Capacity.Text=value.ToString();
+        }
+        public bool CanModifyID { set => txtGUID.IsEnabled=value; }
 
 
         public MaintainBedPage()
@@ -79,9 +92,9 @@ namespace HotelBookingApp.WPF.View
         #endregion
 
         # region IMaintainBedView
-        public void Add_To_Grid(BED bed)
+        public void Add_To_Grid(ModelBaseClass obj)
         {
-            this.grdList.Items.Add(bed);
+            this.grdList.Items.Add((BED)obj);
         }
 
         public void Clear_Grid()
@@ -89,14 +102,14 @@ namespace HotelBookingApp.WPF.View
             this.grdList.Items.Clear();
         }
 
-        public void Remove_From_Grid(BED bed)
+        public void Remove_From_Grid(ModelBaseClass obj)
         {
             BED rowToRemove = null;
 
             foreach (BED row in this.grdList.Items)
             {
 
-                if (row.ID_PK == bed.ID_PK)
+                if (row.ID_PK == obj.ID_PK )
                 {
                     rowToRemove = row;
                     break;
@@ -110,12 +123,12 @@ namespace HotelBookingApp.WPF.View
             }
         }
 
-        public void SetSelectedInGrid(BED bed)
+        public void SetSelectedInGrid(ModelBaseClass obj)
         {
             for (int i = 0; i < this.grdList.Items.Count; i++)
             {
                 dynamic userdata = this.grdList.Items[i];
-                if (userdata.ID_PK == bed.ID_PK)
+                if (userdata.ID_PK == obj.ID_PK)
                 {
                     this.grdList.SelectedIndex = i;
                     break;
@@ -123,13 +136,13 @@ namespace HotelBookingApp.WPF.View
             }
         }
 
-        public void Update_Grid(BED bed)
+        public void Update_Grid(ModelBaseClass obj)
         {
             BED rowToUpdate = null;
 
             foreach (BED row in this.grdList.Items)
             {
-                if (row.ID_PK == bed.ID_PK)
+                if (row.ID_PK == obj.ID_PK)
                 {
                     rowToUpdate = row;
                     break;
@@ -138,9 +151,9 @@ namespace HotelBookingApp.WPF.View
 
             if (rowToUpdate != null)
             {
-                rowToUpdate.ID_PK = bed.ID_PK;
-                rowToUpdate.DESCRIPTION = bed.DESCRIPTION;
-                rowToUpdate.MAX_CAPACITY = bed.MAX_CAPACITY;
+                rowToUpdate.ID_PK = obj.ID_PK;
+                rowToUpdate.DESCRIPTION = ((BED)obj).DESCRIPTION;
+                rowToUpdate.MAX_CAPACITY = ((BED)obj).MAX_CAPACITY;
                 grdList.Items.Refresh();
             }
         }
@@ -159,12 +172,6 @@ namespace HotelBookingApp.WPF.View
 
         #endregion
 
-        #region code not implemented
-        public void Set_Controller(MaintainBedController controller)
-        {
-            throw new NotImplementedException();
-        }
 
-        #endregion
     }
 }

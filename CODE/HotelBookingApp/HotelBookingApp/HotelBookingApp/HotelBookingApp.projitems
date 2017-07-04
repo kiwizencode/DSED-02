@@ -9,6 +9,7 @@
     <Import_RootNamespace>HotelBookingApp</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ADO\ADOBaseClass.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ADO\BED_ADO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ADO\IDataADO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BED.cs" />
