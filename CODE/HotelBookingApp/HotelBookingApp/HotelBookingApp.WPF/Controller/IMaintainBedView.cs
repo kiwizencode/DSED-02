@@ -10,7 +10,7 @@ namespace HotelBookingApp.WPF.Controller
     public interface IMaintainBedView 
     {
         //void Set_Controller(MaintainBedController controller);
-        void clear_Grid();
+        void Clear_Grid();
         void Add_To_Grid(BED bed);
         void Update_Grid(BED bed);
         void Remove_From_Grid(BED bed);

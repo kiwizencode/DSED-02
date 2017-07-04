@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HotelBookingApp.Model
 {
-    public partial class BED
+    public partial class BED : ModelBaseClass
     {
         public Guid ID_PK { get; set; }
         public string DESCRIPTION { get; set; }

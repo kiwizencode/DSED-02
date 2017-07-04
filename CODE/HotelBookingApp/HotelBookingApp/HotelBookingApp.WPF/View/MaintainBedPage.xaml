@@ -15,9 +15,9 @@
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
-                            <GridViewColumn Header="GUID" Width="150" DisplayMemberBinding="{Binding Path=ID}"></GridViewColumn>
-                            <GridViewColumn Header="Description" Width="350" DisplayMemberBinding="{Binding Path=Description}"></GridViewColumn>
-                            <GridViewColumn Header="Max. Capacity" Width="150" DisplayMemberBinding="{Binding Path=Max_Capacity}"></GridViewColumn>
+                            <GridViewColumn Header="GUID" Width="150" DisplayMemberBinding="{Binding Path=ID_PK}"></GridViewColumn>
+                            <GridViewColumn Header="Description" Width="350" DisplayMemberBinding="{Binding Path=DESCRIPTION}"></GridViewColumn>
+                            <GridViewColumn Header="Max. Capacity" Width="150" DisplayMemberBinding="{Binding Path=MAX_CAPACITY}"></GridViewColumn>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>
@@ -36,8 +36,8 @@
                             Click="btnAdd_Click"/>
                     <Button x:Name="btnRemove" Content="Remove Bed" HorizontalAlignment="Left" Height="43" Margin="440,66,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnRemove_Click"/>
-                    <Button x:Name="btnCreate" Content="Create Bed" HorizontalAlignment="Left" Height="50" Margin="440,121,0,0" VerticalAlignment="Top" Width="152"
-                            Click="btnCreate_Click"/>
+                    <Button x:Name="btnSave" Content="Save Bed" HorizontalAlignment="Left" Height="50" Margin="440,121,0,0" VerticalAlignment="Top" Width="152"
+                            Click="btnSave_Click"/>
                     <Button x:Name="btnExit" Content="Exit Screen" HorizontalAlignment="Left" Height="50" Margin="440,179,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnExit_Click"/>
                 </Grid>
