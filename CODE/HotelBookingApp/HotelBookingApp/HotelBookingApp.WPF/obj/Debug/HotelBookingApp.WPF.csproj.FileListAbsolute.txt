@@ -1,4 +1,3 @@
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.csprojResolveAssemblyReference.cache
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\MainWindow.g.cs
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\View\MaintainBedPage.g.cs
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\View\SearchPage.g.cs

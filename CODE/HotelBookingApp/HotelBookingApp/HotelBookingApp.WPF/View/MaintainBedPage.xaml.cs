@@ -34,14 +34,30 @@ namespace HotelBookingApp.WPF.View
         }
         public string DESCRIPTION {
             get => txtDescription.Text ;
-            set => txtDescription.Text=value;
+            set => txtDescription.Text=value.TrimEnd();
         }
         public int MAX_CAPACITY {
-            get => int.Parse(txtMax_Capacity.Text);
-            set => txtMax_Capacity.Text=value.ToString();
+            get
+            {
+                int i;
+                if (int.TryParse(txtMax_Capacity.Text, out i))
+                    return i;
+                else
+                    return -1;
+            }            
+                
+            set
+            {
+                string text = new string(value.ToString().ToCharArray().Where(c => char.IsDigit(c)).ToArray());
+                int i;
+                if (int.TryParse(text,out i))
+                    txtMax_Capacity.Text = i.ToString();
+                else
+                    txtMax_Capacity.Text = "0";
+            }
+            
         }
         public bool CanModifyID { set => txtGUID.IsEnabled=value; }
-
 
         public MaintainBedPage()
         {
@@ -65,7 +81,7 @@ namespace HotelBookingApp.WPF.View
             //    this._controller.SelectedUserChanged(this.grdUsers.SelectedItems[0].Text);
             {
                 dynamic bed = this.grdList.SelectedItem;
-                this._controller.SelectedUserChanged(bed.ID_PK);
+                this._controller.SelectedModelChanged(bed.ID_PK);
             }
         }
 
@@ -92,6 +108,8 @@ namespace HotelBookingApp.WPF.View
         #endregion
 
         # region IMaintainBedView
+
+
         public void Add_To_Grid(ModelBaseClass obj)
         {
             this.grdList.Items.Add((BED)obj);
@@ -168,6 +186,13 @@ namespace HotelBookingApp.WPF.View
             }
             else
                 return null;
+        }
+
+        public void ClearField()
+        {
+            txtGUID.Text = "" ;
+            txtDescription.Text = string.Empty;
+            txtMax_Capacity.Text = "";
         }
 
         #endregion

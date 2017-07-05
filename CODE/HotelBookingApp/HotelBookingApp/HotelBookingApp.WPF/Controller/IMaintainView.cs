@@ -15,9 +15,8 @@ namespace HotelBookingApp.WPF.Controller
         void Remove_From_Grid(ModelBaseClass obj);
         Guid? GetSelectedID();
         void SetSelectedInGrid(ModelBaseClass obj);
-
         Guid ID_PK { get; set; }
-
         bool CanModifyID { set; }
+        void ClearField();
     }
 }

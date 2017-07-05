@@ -9,7 +9,7 @@ using HotelBookingApp.ADO;
 
 namespace HotelBookingApp.WPF.Controller
 {
-    public class MaintainBedController
+    public class MaintainBedController : IController
     {
         IMaintainBedView _view;
         IList _list;
@@ -34,15 +34,16 @@ namespace HotelBookingApp.WPF.Controller
 
         }
 
+
         public void AddNew()
         {
             _selected = new BED( ""/*Description*/, 0 /*Max Capacity*/);
 
-            this.updateViewDetail(_selected);
-            this._view.CanModifyID = true;
+            UpdateViewDetail(_selected);
+            _view.CanModifyID = true;
         }
 
-        private void updateViewDetail(ModelBaseClass obj)
+        public void UpdateViewDetail(ModelBaseClass obj)
         {
             BED selectedUser = obj as BED;
             _view.ID_PK = selectedUser.ID_PK;
@@ -50,22 +51,24 @@ namespace HotelBookingApp.WPF.Controller
             _view.MAX_CAPACITY = selectedUser.MAX_CAPACITY;
         }
 
-        private void updateBedDetail(ModelBaseClass obj)
+        public void UpdateModelDetail(ModelBaseClass obj)
         {
             BED selectedUser = obj as BED;
             selectedUser.ID_PK = _view.ID_PK;
-            selectedUser.DESCRIPTION = _view.DESCRIPTION.TrimEnd();
-            selectedUser.MAX_CAPACITY = _view.MAX_CAPACITY;
+            selectedUser.DESCRIPTION = _view.DESCRIPTION;
+            int i;
+            if ( (  i = _view.MAX_CAPACITY ) !=-1)
+                selectedUser.MAX_CAPACITY = i ;
         }
 
-        public void SelectedUserChanged(Guid selectedBedId)
+        public void SelectedModelChanged(Guid selectedBedId)
         {
             foreach (BED obj in this._list)
             {
                 if (obj.ID_PK == selectedBedId)
                 {
                     _selected = obj;
-                    updateViewDetail(obj);
+                    UpdateViewDetail(obj);
                     _view.SetSelectedInGrid(obj);
                     this._view.CanModifyID = false;
                     break;
@@ -104,10 +107,13 @@ namespace HotelBookingApp.WPF.Controller
                     }
                 }
             }
+
+            //ClearViewDetail();
+            _view.ClearField();
         }
         public void Save()
         {
-            updateBedDetail(_selected);
+            UpdateModelDetail(_selected);
             if (!this._list.Contains(_selected))
             {
                 // Add new bed
@@ -126,6 +132,18 @@ namespace HotelBookingApp.WPF.Controller
             _view.SetSelectedInGrid(_selected);
             this._view.CanModifyID = false;
 
+            //ClearViewDetail();
+            _view.ClearField();
         }
+
+        /*
+
+        public void ClearViewDetail()
+        {
+            _view.ID_PK = new Guid();
+            _view.DESCRIPTION = string.Empty;
+            _view.MAX_CAPACITY = 0;
+        }         
+         */
     }
 }
