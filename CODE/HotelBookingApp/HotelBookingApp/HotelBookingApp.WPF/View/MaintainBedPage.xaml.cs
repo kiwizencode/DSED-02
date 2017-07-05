@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,7 +58,7 @@ namespace HotelBookingApp.WPF.View
             }
             
         }
-        public bool CanModifyID { set => txtGUID.IsEnabled=value; }
+        //public bool CanModifyID { set => txtGUID.IsEnabled=value; }
 
         public MaintainBedPage()
         {
@@ -95,7 +96,7 @@ namespace HotelBookingApp.WPF.View
             this._controller.Remove();
         }
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             this._controller.Save();
         }
@@ -104,15 +105,19 @@ namespace HotelBookingApp.WPF.View
         {
 
         }
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this._controller.Revert();
+        }
 
         #endregion
 
         # region IMaintainBedView
 
 
-        public void Add_To_Grid(ModelBaseClass obj)
+        public void Add_To_Grid(Abstract_Model obj)
         {
-            this.grdList.Items.Add((BED)obj);
+            this.grdList.Items.Add((BED_Model)obj);
         }
 
         public void Clear_Grid()
@@ -120,11 +125,11 @@ namespace HotelBookingApp.WPF.View
             this.grdList.Items.Clear();
         }
 
-        public void Remove_From_Grid(ModelBaseClass obj)
+        public void Remove_From_Grid(Abstract_Model obj)
         {
-            BED rowToRemove = null;
+            BED_Model rowToRemove = null;
 
-            foreach (BED row in this.grdList.Items)
+            foreach (BED_Model row in this.grdList.Items)
             {
 
                 if (row.ID_PK == obj.ID_PK )
@@ -141,7 +146,7 @@ namespace HotelBookingApp.WPF.View
             }
         }
 
-        public void SetSelectedInGrid(ModelBaseClass obj)
+        public void SetSelectedInGrid(Abstract_Model obj)
         {
             for (int i = 0; i < this.grdList.Items.Count; i++)
             {
@@ -154,11 +159,11 @@ namespace HotelBookingApp.WPF.View
             }
         }
 
-        public void Update_Grid(ModelBaseClass obj)
+        public void Update_Grid(Abstract_Model obj)
         {
-            BED rowToUpdate = null;
+            BED_Model rowToUpdate = null;
 
-            foreach (BED row in this.grdList.Items)
+            foreach (BED_Model row in this.grdList.Items)
             {
                 if (row.ID_PK == obj.ID_PK)
                 {
@@ -170,8 +175,8 @@ namespace HotelBookingApp.WPF.View
             if (rowToUpdate != null)
             {
                 rowToUpdate.ID_PK = obj.ID_PK;
-                rowToUpdate.DESCRIPTION = ((BED)obj).DESCRIPTION;
-                rowToUpdate.MAX_CAPACITY = ((BED)obj).MAX_CAPACITY;
+                rowToUpdate.DESCRIPTION = ((BED_Model)obj).DESCRIPTION;
+                rowToUpdate.MAX_CAPACITY = ((BED_Model)obj).MAX_CAPACITY;
                 grdList.Items.Refresh();
             }
         }
@@ -193,10 +198,25 @@ namespace HotelBookingApp.WPF.View
             txtGUID.Text = "" ;
             txtDescription.Text = string.Empty;
             txtMax_Capacity.Text = "";
+
+            SetViewButtonIsEnabled();
         }
 
+        public void SetViewButtonIsEnabled()
+        {
+            btnOK.IsEnabled = !btnOK.IsEnabled;
+            btnCancel.IsEnabled = !btnCancel.IsEnabled;
+
+            txtDescription.IsEnabled = !txtDescription.IsEnabled;
+            txtMax_Capacity.IsEnabled = !txtMax_Capacity.IsEnabled;
+
+            btnAdd.IsEnabled = !btnAdd.IsEnabled;
+            btnRemove.IsEnabled = !btnRemove.IsEnabled;
+        }
         #endregion
 
 
     }
+
+
 }

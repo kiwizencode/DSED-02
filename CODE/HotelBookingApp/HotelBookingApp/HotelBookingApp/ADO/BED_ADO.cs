@@ -7,11 +7,11 @@ using System.Data.SqlClient;
 
 namespace HotelBookingApp.ADO
 {
-    public class BED_ADO : ADOBaseClass, IDataADO
+    public class BED_ADO : Abstract_ADO, IADO
     {
-        public void Create(ModelBaseClass obj)
+        public void Create(Abstract_Model obj)
         {
-            BED bed = obj as BED;
+            BED_Model bed = obj as BED_Model;
             string sql = "INSERT INTO [BED] ( [DESCRIPTION],[MAX_CAPACITY]) VALUES" +
                                                 "(@DESCRIPTION,@MAX_CAPACITY); ";
 
@@ -41,9 +41,9 @@ namespace HotelBookingApp.ADO
             }
         }
 
-        public void Delete(ModelBaseClass obj)
+        public void Delete(Abstract_Model obj)
         {
-            BED bed = obj as BED;
+            BED_Model bed = obj as BED_Model;
             string sql = "DELETE [BED] " +
                          " WHERE [ID_PK] = @ID_PK ;";
 
@@ -75,7 +75,7 @@ namespace HotelBookingApp.ADO
 
         public IList Retreive()
         {
-            List<BED> list = new List<BED>();
+            List<BED_Model> list = new List<BED_Model>();
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 string sql = "SELECT ID_PK, DESCRIPTION, MAX_CAPACITY FROM BED;";
@@ -91,7 +91,7 @@ namespace HotelBookingApp.ADO
                     {
                         while(reader.Read())
                         {
-                            BED obj = new BED();
+                            BED_Model obj = new BED_Model();
                             obj.ID_PK = (Guid)reader[0];
                             obj.DESCRIPTION = reader[1].ToString();
                             obj.MAX_CAPACITY = (int)reader[2];
@@ -117,9 +117,9 @@ namespace HotelBookingApp.ADO
 
         }
 
-        public void Update(ModelBaseClass obj)
+        public void Update(Abstract_Model obj)
         {
-            BED bed = obj as BED;
+            BED_Model bed = obj as BED_Model;
             string sql = "UPDATE [BED] " +
                          " SET [DESCRIPTION] = @DESCRIPTION, " +
                               "[MAX_CAPACITY] = @MAX_CAPACITY " +

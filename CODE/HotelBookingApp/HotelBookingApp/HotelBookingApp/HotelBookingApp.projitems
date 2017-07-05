@@ -9,11 +9,12 @@
     <Import_RootNamespace>HotelBookingApp</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)ADO\ADOBaseClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ADO\Abstract_ADO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ADO\BED_ADO.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ADO\IDataADO.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\BED.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\ModelBaseClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ADO\IADO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\GuidConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BED_Model.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Abstract_Model.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\RoomSetting.cs" />
   </ItemGroup>
 </Project>

@@ -12,10 +12,11 @@ namespace HotelBookingApp.WPF.Controller
     {
         void LoadView();
         void AddNew();
-        void UpdateViewDetail(ModelBaseClass obj);
-        void UpdateModelDetail(ModelBaseClass obj);
+        void UpdateViewDetail(Abstract_Model obj);
+        void UpdateModelDetail(Abstract_Model obj);
         void SelectedModelChanged(Guid selectedBedId);
         void Remove();
         void Save();
+        void Revert();
     }
 }

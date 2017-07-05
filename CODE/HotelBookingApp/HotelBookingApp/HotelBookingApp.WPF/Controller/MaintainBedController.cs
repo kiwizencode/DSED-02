@@ -13,7 +13,7 @@ namespace HotelBookingApp.WPF.Controller
     {
         IMaintainBedView _view;
         IList _list;
-        BED _selected;
+        BED_Model _selected;
         BED_ADO _data;
 
         public MaintainBedController(IMaintainBedView view)
@@ -27,33 +27,37 @@ namespace HotelBookingApp.WPF.Controller
         public void LoadView()
         {
             _view.Clear_Grid();
-            foreach (ModelBaseClass obj in _list)
+            foreach (Abstract_Model obj in _list)
                 _view.Add_To_Grid(obj);
 
-            _view.SetSelectedInGrid((ModelBaseClass)_list[0]);
-
+            //_view.SetSelectedInGrid((Abstract_Model)_list[0]);
+            _view.ClearField();
         }
 
 
         public void AddNew()
         {
-            _selected = new BED( ""/*Description*/, 0 /*Max Capacity*/);
+            _selected = new BED_Model( ""/*Description*/, 0 /*Max Capacity*/);
 
             UpdateViewDetail(_selected);
-            _view.CanModifyID = true;
+
+            _view.SetViewButtonIsEnabled();
+            //_view.CanModifyID = true;
         }
 
-        public void UpdateViewDetail(ModelBaseClass obj)
+        public void UpdateViewDetail(Abstract_Model obj)
         {
-            BED selectedUser = obj as BED;
+            BED_Model selectedUser = obj as BED_Model;
             _view.ID_PK = selectedUser.ID_PK;
             _view.DESCRIPTION = selectedUser.DESCRIPTION;
             _view.MAX_CAPACITY = selectedUser.MAX_CAPACITY;
+
+            
         }
 
-        public void UpdateModelDetail(ModelBaseClass obj)
+        public void UpdateModelDetail(Abstract_Model obj)
         {
-            BED selectedUser = obj as BED;
+            BED_Model selectedUser = obj as BED_Model;
             selectedUser.ID_PK = _view.ID_PK;
             selectedUser.DESCRIPTION = _view.DESCRIPTION;
             int i;
@@ -63,14 +67,14 @@ namespace HotelBookingApp.WPF.Controller
 
         public void SelectedModelChanged(Guid selectedBedId)
         {
-            foreach (BED obj in this._list)
+            foreach (BED_Model obj in this._list)
             {
                 if (obj.ID_PK == selectedBedId)
                 {
                     _selected = obj;
                     UpdateViewDetail(obj);
                     _view.SetSelectedInGrid(obj);
-                    this._view.CanModifyID = false;
+                    //this._view.CanModifyID = false;
                     break;
                 }
             }
@@ -80,11 +84,11 @@ namespace HotelBookingApp.WPF.Controller
         {
             Guid? id = this._view.GetSelectedID();
                 
-            BED objToRemove = null;
+            BED_Model objToRemove = null;
 
             if (id != null)
             {
-                foreach (BED obj in this._list)
+                foreach (BED_Model obj in this._list)
                 {
                     if (obj.ID_PK == id)
                     {
@@ -103,7 +107,7 @@ namespace HotelBookingApp.WPF.Controller
 
                     if (newSelectedIndex > -1 && newSelectedIndex < _list.Count)
                     {
-                        this._view.SetSelectedInGrid((BED)_list[newSelectedIndex]);
+                        this._view.SetSelectedInGrid((BED_Model)_list[newSelectedIndex]);
                     }
                 }
             }
@@ -119,7 +123,7 @@ namespace HotelBookingApp.WPF.Controller
                 // Add new bed
                 this._data.Create(_selected);
                 _list = _data.Retreive();
-                _selected = (BED)_list[_list.Count-1];
+                _selected = (BED_Model)_list[_list.Count-1];
                 //this._list.Add(_selected);
                 this._view.Add_To_Grid(_selected);
             }
@@ -130,12 +134,16 @@ namespace HotelBookingApp.WPF.Controller
                 this._view.Update_Grid(_selected);
             }
             _view.SetSelectedInGrid(_selected);
-            this._view.CanModifyID = false;
+            //this._view.CanModifyID = false;
 
             //ClearViewDetail();
             _view.ClearField();
         }
 
+        public void Revert()
+        {
+            _view.ClearField();
+        }
         /*
 
         public void ClearViewDetail()
