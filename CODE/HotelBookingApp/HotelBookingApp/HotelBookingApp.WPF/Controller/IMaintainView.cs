@@ -19,6 +19,6 @@ namespace HotelBookingApp.WPF.Controller
         //bool CanModifyID { set; }
         void ClearField();
 
-        void SetViewButtonIsEnabled();
+        void SetViewButtonIsEnabled(Boolean flag=true);
     }
 }

@@ -32,6 +32,7 @@ namespace HotelBookingApp.WPF.Controller
 
             //_view.SetSelectedInGrid((Abstract_Model)_list[0]);
             _view.ClearField();
+            _view.SetViewButtonIsEnabled();
         }
 
 
@@ -41,7 +42,7 @@ namespace HotelBookingApp.WPF.Controller
 
             UpdateViewDetail(_selected);
 
-            _view.SetViewButtonIsEnabled();
+            _view.SetViewButtonIsEnabled(false);
             //_view.CanModifyID = true;
         }
 
@@ -50,9 +51,7 @@ namespace HotelBookingApp.WPF.Controller
             BED_Model selectedUser = obj as BED_Model;
             _view.ID_PK = selectedUser.ID_PK;
             _view.DESCRIPTION = selectedUser.DESCRIPTION;
-            _view.MAX_CAPACITY = selectedUser.MAX_CAPACITY;
-
-            
+            _view.MAX_CAPACITY = selectedUser.MAX_CAPACITY;       
         }
 
         public void UpdateModelDetail(Abstract_Model obj)
@@ -102,47 +101,49 @@ namespace HotelBookingApp.WPF.Controller
                 {
                     int newSelectedIndex = this._list.IndexOf(objToRemove);
                     _data.Delete(objToRemove);
-                    this._list.Remove(objToRemove);
-                    this._view.Remove_From_Grid(objToRemove);
+                    _list.Remove(objToRemove);
+                    _view.Remove_From_Grid(objToRemove);
 
                     if (newSelectedIndex > -1 && newSelectedIndex < _list.Count)
                     {
-                        this._view.SetSelectedInGrid((BED_Model)_list[newSelectedIndex]);
+                        _view.SetSelectedInGrid((BED_Model)_list[newSelectedIndex]);
                     }
                 }
             }
 
             //ClearViewDetail();
-            //_view.ClearField();
+            _view.ClearField();
         }
         public void Save()
         {
             UpdateModelDetail(_selected);
-            if (!this._list.Contains(_selected))
+            if (!_list.Contains(_selected))
             {
                 // Add new bed
                 this._data.Create(_selected);
                 _list = _data.Retreive();
                 _selected = (BED_Model)_list[_list.Count-1];
                 //this._list.Add(_selected);
-                this._view.Add_To_Grid(_selected);
+                _view.Add_To_Grid(_selected);
             }
             else
             {
                 // Update existing bed
                 _data.Update(_selected);
-                this._view.Update_Grid(_selected);
+                _view.Update_Grid(_selected);
             }
             _view.SetSelectedInGrid(_selected);
             //this._view.CanModifyID = false;
 
             //ClearViewDetail();
             _view.ClearField();
+            _view.SetViewButtonIsEnabled();
         }
 
         public void Revert()
         {
             _view.ClearField();
+            _view.SetViewButtonIsEnabled();
         }
         /*
 

@@ -15,7 +15,7 @@
                    HorizontalContentAlignment="Center"/>
 
             <StackPanel HorizontalAlignment="Left" Height="168" Margin="10,106,0,0" VerticalAlignment="Top" Width="780">
-                <Button x:Name="btnMaintainBed" Content="Bed Maintenance Screen" HorizontalAlignment="Left" Height="34" Width="770" 
+                <Button x:Name="btnMaintainBed" Content="Bed Maintenance" HorizontalAlignment="Left" Height="34" Width="770" 
                         FontFamily="Segoe Print" FontSize="14" Click="btnMaintainBed_Click"/>
             </StackPanel>
 

@@ -179,7 +179,6 @@ namespace HotelBookingApp.WPF.View
             }
         }
 
-
         public Guid? GetSelectedID()
         {
             if (grdList.SelectedIndex > 0)
@@ -197,19 +196,19 @@ namespace HotelBookingApp.WPF.View
             txtDescription.Text = string.Empty;
             txtMax_Capacity.Text = "";
 
-            SetViewButtonIsEnabled();
+            //SetViewButtonIsEnabled();
         }
 
-        public void SetViewButtonIsEnabled()
+        public void SetViewButtonIsEnabled(Boolean flag=true)
         {
-            btnOK.IsEnabled = !btnOK.IsEnabled;
-            btnCancel.IsEnabled = !btnCancel.IsEnabled;
+            btnOK.IsEnabled = !flag;
+            btnCancel.IsEnabled = !flag;
 
-            txtDescription.IsEnabled = !txtDescription.IsEnabled;
-            txtMax_Capacity.IsEnabled = !txtMax_Capacity.IsEnabled;
+            txtDescription.IsEnabled = !flag;
+            txtMax_Capacity.IsEnabled = !flag;
 
-            btnAdd.IsEnabled = !btnAdd.IsEnabled;
-            btnRemove.IsEnabled = !btnRemove.IsEnabled;
+            btnAdd.IsEnabled = flag;
+            btnRemove.IsEnabled = flag;
         }
         #endregion
 
