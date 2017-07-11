@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:HotelBookingApp.WPF.View"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
-      WindowTitle="DSED02 Assignment" 
+      WindowTitle="DSED02 Assignment ADO SQL" 
       ShowsNavigationUI="False">
     <Viewbox Stretch="Fill" >
         <Grid Background="#FF54C1EA" >

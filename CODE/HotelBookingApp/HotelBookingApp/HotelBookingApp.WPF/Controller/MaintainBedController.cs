@@ -113,7 +113,7 @@ namespace HotelBookingApp.WPF.Controller
             }
 
             //ClearViewDetail();
-            _view.ClearField();
+            //_view.ClearField();
         }
         public void Save()
         {
