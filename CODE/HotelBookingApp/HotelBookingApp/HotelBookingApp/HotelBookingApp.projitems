@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ADO\Abstract_ADO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ADO\BED_ADO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ADO\IADO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ADO\SETTING_ADO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\GuidConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BED_Model.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Abstract_Model.cs" />

@@ -30,5 +30,11 @@ namespace HotelBookingApp.WPF.View
             MaintainBedPage page = new MaintainBedPage();
             this.NavigationService.Navigate(page);
         }
+
+        private void btnMaintainSetting_Click(object sender, RoutedEventArgs e)
+        {
+            MaintainSettingPage page = new MaintainSettingPage();
+            this.NavigationService.Navigate(page);
+        }
     }
 }

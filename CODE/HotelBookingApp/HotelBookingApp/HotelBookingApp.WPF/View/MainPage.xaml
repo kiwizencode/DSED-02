@@ -17,6 +17,8 @@
             <StackPanel HorizontalAlignment="Left" Height="168" Margin="10,106,0,0" VerticalAlignment="Top" Width="780">
                 <Button x:Name="btnMaintainBed" Content="Bed Maintenance" HorizontalAlignment="Left" Height="34" Width="770" 
                         FontFamily="Segoe Print" FontSize="14" Click="btnMaintainBed_Click"/>
+                <Button x:Name="btnMaintainSetting" Content="Setting Maintenance" HorizontalAlignment="Left" Height="34" Width="770" 
+                        FontFamily="Segoe Print" FontSize="14" Click="btnMaintainSetting_Click"/>                
             </StackPanel>
 
 

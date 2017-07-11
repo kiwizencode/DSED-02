@@ -13,13 +13,13 @@ namespace HotelBookingApp.WPF.Controller
     {
         IMaintainSettingView _view;
         IList _list;
-        BED_Model _selected;
-        BED_ADO _data;
+        SETTING_Model _selected;
+        SETTING_ADO _data;
 
         public MaintainSettingController(IMaintainSettingView view)
         {
             _view = view;
-            _data = new BED_ADO();
+            _data = new SETTING_ADO();
             _list = _data.Retreive();
         }
 

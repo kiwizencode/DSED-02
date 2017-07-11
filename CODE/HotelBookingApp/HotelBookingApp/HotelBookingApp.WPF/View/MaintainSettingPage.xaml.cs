@@ -23,34 +23,38 @@ namespace HotelBookingApp.WPF.View
     public partial class MaintainSettingPage : Page , IMaintainSettingView
     {
         // controller for Maintain Setting View
-        private MaintainBedController _controller;
+        private MaintainSettingController _controller;
         public MaintainSettingPage()
         {
+            InitializeComponent();
+
             InitializeController();
         }
 
         private void InitializeController()
         {
-            _controller = new MaintainBedController(this);
+            _controller = new MaintainSettingController(this);
             _controller.LoadView();
         }
 
         public string DESCRIPTION { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public Guid ID_PK { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        # region IMaintainSettingView
+
         public void Add_To_Grid(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            grdList.Items.Add((SETTING_Model)obj);
         }
 
         public void ClearField()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void Clear_Grid()
         {
-            throw new NotImplementedException();
+            grdList.Items.Clear();
         }
 
         public Guid? GetSelectedID()
@@ -70,12 +74,25 @@ namespace HotelBookingApp.WPF.View
 
         public void SetViewButtonIsEnabled(bool flag = true)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void Update_Grid(Abstract_Model obj)
         {
             throw new NotImplementedException();
         }
+        #endregion
+
+        #region Events raised back to controller
+
+        private void grdList_SelectedIndexChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (grdList.SelectedItems.Count > 0)
+            {
+                dynamic bed = grdList.SelectedItem;
+                //_controller.SelectedModelChanged(bed.ID_PK);
+            }
+        }
+        #endregion
     }
 }
