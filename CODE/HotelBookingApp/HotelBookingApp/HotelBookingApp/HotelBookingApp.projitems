@@ -16,5 +16,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\BED_Model.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Abstract_Model.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\RoomSetting.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SETTING_Model.cs" />
   </ItemGroup>
 </Project>

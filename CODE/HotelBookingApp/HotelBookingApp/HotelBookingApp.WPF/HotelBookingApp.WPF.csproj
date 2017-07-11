@@ -67,14 +67,19 @@
     </ApplicationDefinition>
     <Compile Include="Controller\IController.cs" />
     <Compile Include="Controller\IMaintainBedView.cs" />
+    <Compile Include="Controller\IMaintainSettingView.cs" />
     <Compile Include="Controller\IMaintainView.cs" />
     <Compile Include="Controller\MaintainBedController.cs" />
+    <Compile Include="Controller\MaintainSettingController.cs" />
     <Compile Include="Model\RoomSettingModel.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaintainBedPage.xaml.cs">
       <DependentUpon>MaintainBedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaintainSettingPage.xaml.cs">
+      <DependentUpon>MaintainSettingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SearchPage.xaml.cs">
       <DependentUpon>SearchPage.xaml</DependentUpon>
@@ -100,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MaintainBedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaintainSettingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
