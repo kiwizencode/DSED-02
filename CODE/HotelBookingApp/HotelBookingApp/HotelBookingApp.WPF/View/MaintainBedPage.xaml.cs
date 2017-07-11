@@ -30,7 +30,7 @@ namespace HotelBookingApp.WPF.View
             get => _ID ;
             set {
                 _ID = value;
-                this.txtGUID.Text = _ID.ToString();
+                txtGUID.Text = _ID.ToString();
             }
         }
         public string DESCRIPTION {
@@ -69,7 +69,7 @@ namespace HotelBookingApp.WPF.View
 
         private void InitializeController()
         {
-            this._controller = new MaintainBedController(this);
+            _controller = new MaintainBedController(this);
             _controller.LoadView();
         }
 
@@ -78,36 +78,35 @@ namespace HotelBookingApp.WPF.View
 
         private void grdList_SelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (this.grdList.SelectedItems.Count > 0)
-            //    this._controller.SelectedUserChanged(this.grdUsers.SelectedItems[0].Text);
+            if (grdList.SelectedItems.Count > 0)
             {
-                dynamic bed = this.grdList.SelectedItem;
-                this._controller.SelectedModelChanged(bed.ID_PK);
+                dynamic bed = grdList.SelectedItem;
+                _controller.SelectedModelChanged(bed.ID_PK);
             }
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            this._controller.AddNew();
+            _controller.AddNew();
         }
 
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
-            this._controller.Remove();
+            _controller.Remove();
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            this._controller.Save();
+            _controller.Save();
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.GoBack();
         }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            this._controller.Revert();
+            _controller.Revert();
         }
 
         #endregion
@@ -117,21 +116,20 @@ namespace HotelBookingApp.WPF.View
 
         public void Add_To_Grid(Abstract_Model obj)
         {
-            this.grdList.Items.Add((BED_Model)obj);
+            grdList.Items.Add((BED_Model)obj);
         }
 
         public void Clear_Grid()
         {
-            this.grdList.Items.Clear();
+            grdList.Items.Clear();
         }
 
         public void Remove_From_Grid(Abstract_Model obj)
         {
             BED_Model rowToRemove = null;
 
-            foreach (BED_Model row in this.grdList.Items)
+            foreach (BED_Model row in grdList.Items)
             {
-
                 if (row.ID_PK == obj.ID_PK )
                 {
                     rowToRemove = row;
@@ -141,19 +139,19 @@ namespace HotelBookingApp.WPF.View
 
             if (rowToRemove != null)
             {
-                this.grdList.Items.Remove(rowToRemove);
-                this.grdList.Focus();
+                grdList.Items.Remove(rowToRemove);
+                grdList.Focus();
             }
         }
 
         public void SetSelectedInGrid(Abstract_Model obj)
         {
-            for (int i = 0; i < this.grdList.Items.Count; i++)
+            for (int i = 0; i < grdList.Items.Count; i++)
             {
-                dynamic userdata = this.grdList.Items[i];
+                dynamic userdata = grdList.Items[i];
                 if (userdata.ID_PK == obj.ID_PK)
                 {
-                    this.grdList.SelectedIndex = i;
+                    grdList.SelectedIndex = i;
                     break;
                 }
             }
@@ -163,7 +161,7 @@ namespace HotelBookingApp.WPF.View
         {
             BED_Model rowToUpdate = null;
 
-            foreach (BED_Model row in this.grdList.Items)
+            foreach (BED_Model row in grdList.Items)
             {
                 if (row.ID_PK == obj.ID_PK)
                 {
@@ -184,9 +182,9 @@ namespace HotelBookingApp.WPF.View
 
         public Guid? GetSelectedID()
         {
-            if (this.grdList.SelectedIndex > 0)
+            if (grdList.SelectedIndex > 0)
             {
-                dynamic obj = this.grdList.SelectedItem;
+                dynamic obj = grdList.SelectedItem;
                 return obj.ID_PK;
             }
             else

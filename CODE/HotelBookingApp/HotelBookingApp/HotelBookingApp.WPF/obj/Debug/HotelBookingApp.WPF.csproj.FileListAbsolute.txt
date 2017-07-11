@@ -24,4 +24,7 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBoo
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.csprojResolveAssemblyReference.cache
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\View\MainPage.g.cs
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\View\MainPage.baml
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\Simple Styles.baml
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\App.baml
