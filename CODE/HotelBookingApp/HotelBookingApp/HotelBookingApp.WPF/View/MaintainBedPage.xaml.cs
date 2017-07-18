@@ -71,10 +71,10 @@ namespace HotelBookingApp.WPF.View
             _controller = new MaintainBedController(this);
             _controller.LoadView();
             //SetViewButtonIsEnabled(false);
-            SetbtnAddIsEnabled(true);
+            SetButtonAddIsEnabled(true);
         }
 
-        private void SetbtnAddIsEnabled(bool flag)
+        private void SetButtonAddIsEnabled(bool flag)
         {
             // set Add/Edit/Remove button isEnable 
             btnAdd.IsEnabled = flag;
@@ -101,7 +101,7 @@ namespace HotelBookingApp.WPF.View
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             _controller.Revert();
-            SetbtnAddIsEnabled(true);
+            SetButtonAddIsEnabled(true);
         }
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
@@ -118,14 +118,14 @@ namespace HotelBookingApp.WPF.View
 
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
-            //btnRemove.IsEnabled = true;
             _controller.Remove();
+            SetButtonAddIsEnabled(true);
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             _controller.Save();
-            SetbtnAddIsEnabled(true);
+            SetButtonAddIsEnabled(true);
         }
 
 
@@ -184,7 +184,7 @@ namespace HotelBookingApp.WPF.View
                 if (item.ID_PK == obj.ID_PK)
                 {
                     grdList.SelectedIndex = i;
-                    SetbtnAddIsEnabled(false);
+                    SetButtonAddIsEnabled(false);
                     break;
                 }
             }
