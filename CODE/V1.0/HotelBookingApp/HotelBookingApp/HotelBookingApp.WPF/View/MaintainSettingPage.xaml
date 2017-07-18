@@ -1,0 +1,58 @@
+﻿<Page x:Class="HotelBookingApp.WPF.View.MaintainSettingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HotelBookingApp.WPF.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      WindowTitle="DSED02 ADO SQL Maintain Setting Page" 
+      ShowsNavigationUI="False">
+
+    <Viewbox Stretch="Fill" >
+        <Grid Background="#FF54C1EA" Height="600">
+            <!-- Edit Setting Information Control -->
+
+            <GroupBox Header="Maintain Setting Information :" HorizontalAlignment="Left" Height="192" Margin="10,10,0,0" VerticalAlignment="Top" Width="654" FontFamily="Segoe Print" FontSize="14">
+                <Grid HorizontalAlignment="Left" Height="253" Margin="0,0,0,0" VerticalAlignment="Top" Width="636">
+                    <Label Content="Description :" HorizontalAlignment="Left" Height="41" Margin="104,60,0,0" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="GUID :" HorizontalAlignment="Left" Height="30" Margin="24,12,0,0" VerticalAlignment="Top" Width="60"/>
+
+                    <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="30" Margin="216,61,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="225" IsEnabled="False"/>
+                    <TextBox x:Name="txtGUID" HorizontalAlignment="Left" Height="30" Margin="89,15,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="352" IsEnabled="False" FontSize="12"/>
+                    <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="50" Margin="456,17,0,0" VerticalAlignment="Top" Width="152"
+                            Click="btnOK_Click" IsEnabled="False"/>
+                    <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="50" Margin="456,86,0,0" VerticalAlignment="Top" Width="152"
+                        Click="btnCancel_Click" IsEnabled="False"/>
+                </Grid>
+            </GroupBox>
+
+
+            <!-- Create a ListView that shows all setting records-->
+            <ListView x:Name="grdList" HorizontalAlignment="Left" Height="280" VerticalAlignment="Top" Width="674" Margin="0,320,0,0"
+                      SelectionChanged="grdList_SelectedIndexChanged" Background="{x:Null}" FontFamily="Segoe Print" FontSize="14">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="GUID" Width="375" DisplayMemberBinding="{Binding Path=GUID}"></GridViewColumn>
+                            <GridViewColumn Header="Description" Width="100" DisplayMemberBinding="{Binding Path=DESCRIPTION}"></GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            
+            <!-- Button Control -->
+            <Button x:Name="btnAdd" Content="Add Bed" HorizontalAlignment="Left" Height="39" Margin="13,253,0,0" VerticalAlignment="Top" Width="152"
+                            Click="btnAdd_Click" FontFamily="Segoe Print" FontSize="14"/>
+            <Button x:Name="btnRemove" Content="Remove Bed" HorizontalAlignment="Left" Height="40" Margin="174,252,0,0" VerticalAlignment="Top" Width="152"
+                            Click="btnRemove_Click" FontFamily="Segoe Print" FontSize="14" IsEnabled="False"/>
+            <Button x:Name="btnExit" Content="Exit Screen" HorizontalAlignment="Left" Height="39" Margin="512,253,0,0" VerticalAlignment="Top" Width="152"
+                            Click="btnExit_Click" FontFamily="Segoe Print" FontSize="14"/>            
+        </Grid>
+    </Viewbox>
+</Page>
