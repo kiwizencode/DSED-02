@@ -58,7 +58,6 @@ namespace HotelBookingApp.WPF.View
             }
             
         }
-        //public bool CanModifyID { set => txtGUID.IsEnabled=value; }
 
         public MaintainBedPage()
         {
@@ -71,8 +70,17 @@ namespace HotelBookingApp.WPF.View
         {
             _controller = new MaintainBedController(this);
             _controller.LoadView();
+            //SetViewButtonIsEnabled(false);
+            SetbtnAddIsEnabled(true);
         }
 
+        private void SetbtnAddIsEnabled(bool flag)
+        {
+            // set Add/Edit/Remove button isEnable 
+            btnAdd.IsEnabled = flag;
+            btnEdit.IsEnabled = !flag;
+            btnRemove.IsEnabled = !flag;
+        }
 
         #region Events raised back to controller
 
@@ -80,34 +88,47 @@ namespace HotelBookingApp.WPF.View
         {
             if (grdList.SelectedItems.Count > 0)
             {
-                dynamic bed = grdList.SelectedItem;
-                _controller.SelectedModelChanged(bed.ID_PK);
+                dynamic item = grdList.SelectedItem;
+                _controller.SelectedModelChanged(item.ID_PK);
             }
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            btnAdd.IsEnabled = false;
             _controller.AddNew();
         }
-
-        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            _controller.Remove();
+            _controller.Revert();
+            SetbtnAddIsEnabled(true);
         }
-
-        private void btnOK_Click(object sender, RoutedEventArgs e)
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            _controller.Save();
+            btnEdit.IsEnabled = false;
+            btnRemove.IsEnabled = false;
+            _controller.Edit();
+            SetViewButtonIsEnabled(true);
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
-            _controller.Revert();
+            //btnRemove.IsEnabled = true;
+            _controller.Remove();
         }
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+            _controller.Save();
+            SetbtnAddIsEnabled(true);
+        }
+
+
 
         #endregion
 
@@ -124,11 +145,22 @@ namespace HotelBookingApp.WPF.View
             grdList.Items.Clear();
         }
 
+        public Guid? GetSelectedID()
+        {
+            if (grdList.SelectedIndex > 0)
+            {
+                dynamic obj = grdList.SelectedItem;
+                return obj.ID_PK;
+            }
+            else
+                return null;
+        }
+
         public void Remove_From_Grid(Abstract_Model obj)
         {
-            BED_Model rowToRemove = null;
+            Abstract_Model rowToRemove = null;
 
-            foreach (BED_Model row in grdList.Items)
+            foreach (Abstract_Model row in grdList.Items)
             {
                 if (row.ID_PK == obj.ID_PK )
                 {
@@ -148,10 +180,11 @@ namespace HotelBookingApp.WPF.View
         {
             for (int i = 0; i < grdList.Items.Count; i++)
             {
-                dynamic userdata = grdList.Items[i];
-                if (userdata.ID_PK == obj.ID_PK)
+                dynamic item = grdList.Items[i];
+                if (item.ID_PK == obj.ID_PK)
                 {
                     grdList.SelectedIndex = i;
+                    SetbtnAddIsEnabled(false);
                     break;
                 }
             }
@@ -159,9 +192,9 @@ namespace HotelBookingApp.WPF.View
 
         public void Update_Grid(Abstract_Model obj)
         {
-            BED_Model rowToUpdate = null;
+            dynamic rowToUpdate = null;
 
-            foreach (BED_Model row in grdList.Items)
+            foreach (Abstract_Model row in grdList.Items)
             {
                 if (row.ID_PK == obj.ID_PK)
                 {
@@ -179,17 +212,6 @@ namespace HotelBookingApp.WPF.View
             }
         }
 
-        public Guid? GetSelectedID()
-        {
-            if (grdList.SelectedIndex > 0)
-            {
-                dynamic obj = grdList.SelectedItem;
-                return obj.ID_PK;
-            }
-            else
-                return null;
-        }
-
         public void ClearField()
         {
             txtGUID.Text = "" ;
@@ -199,17 +221,19 @@ namespace HotelBookingApp.WPF.View
             //SetViewButtonIsEnabled();
         }
 
-        public void SetViewButtonIsEnabled(Boolean flag=true)
+        public void SetViewButtonIsEnabled(Boolean flag)
         {
-            btnOK.IsEnabled = !flag;
-            btnCancel.IsEnabled = !flag;
+            btnOK.IsEnabled = flag;
+            btnCancel.IsEnabled = flag;
 
-            txtDescription.IsEnabled = !flag;
-            txtMax_Capacity.IsEnabled = !flag;
+            txtDescription.IsEnabled = flag;
+            txtMax_Capacity.IsEnabled = flag;
 
-            btnAdd.IsEnabled = flag;
-            btnRemove.IsEnabled = flag;
+            //btnAdd.IsEnabled = flag;
+            //btnEdit.IsEnabled = !flag;
+            //btnRemove.IsEnabled = !flag;
         }
+
         #endregion
 
 

@@ -37,9 +37,21 @@ namespace HotelBookingApp.WPF.View
             _controller.LoadView();
         }
 
-        public string DESCRIPTION { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Guid ID_PK { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        public string DESCRIPTION
+        {
+            get => txtDescription.Text;
+            set => txtDescription.Text = value.TrimEnd();
+        }
+        private Guid _ID;
+        public Guid ID_PK
+        {
+            get => _ID;
+            set
+            {
+                _ID = value;
+                txtGUID.Text = _ID.ToString();
+            }
+        }
         # region IMaintainSettingView
 
         public void Add_To_Grid(Abstract_Model obj)
@@ -49,7 +61,8 @@ namespace HotelBookingApp.WPF.View
 
         public void ClearField()
         {
-            //throw new NotImplementedException();
+            txtGUID.Text = "";
+            txtDescription.Text = string.Empty;
         }
 
         public void Clear_Grid()
@@ -59,27 +72,78 @@ namespace HotelBookingApp.WPF.View
 
         public Guid? GetSelectedID()
         {
-            throw new NotImplementedException();
+            if (grdList.SelectedIndex > 0)
+            {
+                dynamic obj = grdList.SelectedItem;
+                return obj.ID_PK;
+            }
+            else
+                return null;
         }
 
         public void Remove_From_Grid(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            Abstract_Model rowToRemove = null;
+
+            foreach (Abstract_Model row in grdList.Items)
+            {
+                if (row.ID_PK == obj.ID_PK)
+                {
+                    rowToRemove = row;
+                    break;
+                }
+            }
+
+            if (rowToRemove != null)
+            {
+                grdList.Items.Remove(rowToRemove);
+                grdList.Focus();
+            }
         }
 
         public void SetSelectedInGrid(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < grdList.Items.Count; i++)
+            {
+                dynamic item = grdList.Items[i];
+                if (item.ID_PK == obj.ID_PK)
+                {
+                    grdList.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         public void SetViewButtonIsEnabled(bool flag = true)
         {
-            //throw new NotImplementedException();
+            btnOK.IsEnabled = !flag;
+            btnCancel.IsEnabled = !flag;
+
+            txtDescription.IsEnabled = !flag;
+
+            btnAdd.IsEnabled = flag;
+            btnRemove.IsEnabled = flag;
         }
 
         public void Update_Grid(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            dynamic rowToUpdate = null;
+
+            foreach (Abstract_Model row in grdList.Items)
+            {
+                if (row.ID_PK == obj.ID_PK)
+                {
+                    rowToUpdate = row;
+                    break;
+                }
+            }
+
+            if (rowToUpdate != null)
+            {
+                rowToUpdate.ID_PK = obj.ID_PK;
+                rowToUpdate.DESCRIPTION = ((SETTING_Model)obj).DESCRIPTION;
+                grdList.Items.Refresh();
+            }
         }
         #endregion
 
@@ -89,10 +153,37 @@ namespace HotelBookingApp.WPF.View
         {
             if (grdList.SelectedItems.Count > 0)
             {
-                dynamic bed = grdList.SelectedItem;
-                //_controller.SelectedModelChanged(bed.ID_PK);
+                dynamic item = grdList.SelectedItem;
+                _controller.SelectedModelChanged(item.ID_PK);
             }
         }
+
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
         #endregion
     }
 }

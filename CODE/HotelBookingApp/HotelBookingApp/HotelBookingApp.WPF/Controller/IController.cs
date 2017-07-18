@@ -10,13 +10,14 @@ namespace HotelBookingApp.WPF.Controller
 {
     public interface IController
     {
-        void LoadView();
         void AddNew();
-        void UpdateViewDetail(Abstract_Model obj);
-        void UpdateModelDetail(Abstract_Model obj);
-        void SelectedModelChanged(Guid selectedBedId);
+        void Edit();
+        void LoadView();
         void Remove();
-        void Save();
         void Revert();
+        void Save();
+        void SelectedModelChanged(Guid selected_ID);
+        void UpdateModelDetail(Abstract_Model obj);
+        void UpdateViewDetail(Abstract_Model obj);
     }
 }

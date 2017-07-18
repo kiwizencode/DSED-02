@@ -35,7 +35,7 @@
 
                     <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="30" Margin="216,61,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="225" IsEnabled="False"/>
                     <TextBox x:Name="txtMax_Capacity" HorizontalAlignment="Left" Height="30" Margin="216,106,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="225" IsEnabled="False"/>
-                    <TextBox x:Name="txtGUID" HorizontalAlignment="Left" Height="30" Margin="89,15,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="352" IsEnabled="False" FontSize="14"/>
+                    <TextBox x:Name="txtGUID" HorizontalAlignment="Left" Height="30" Margin="89,15,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="352" IsEnabled="False" FontSize="12"/>
                     <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="50" Margin="456,17,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnOK_Click" IsEnabled="False"/>
                     <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="50" Margin="456,86,0,0" VerticalAlignment="Top" Width="152"
@@ -44,7 +44,9 @@
             </GroupBox>
             <Button x:Name="btnAdd" Content="Add Bed" HorizontalAlignment="Left" Height="39" Margin="13,253,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnAdd_Click" FontFamily="Segoe Print" FontSize="14"/>
-            <Button x:Name="btnRemove" Content="Remove Bed" HorizontalAlignment="Left" Height="40" Margin="174,252,0,0" VerticalAlignment="Top" Width="152"
+            <Button x:Name="btnEdit" Content="Edit Bed" HorizontalAlignment="Left" Height="40" Margin="172,252,0,0" VerticalAlignment="Top" Width="152"
+                            Click="btnEdit_Click" FontFamily="Segoe Print" FontSize="14" IsEnabled="False"/>
+            <Button x:Name="btnRemove" Content="Remove Bed" HorizontalAlignment="Left" Height="40" Margin="332,252,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnRemove_Click" FontFamily="Segoe Print" FontSize="14" IsEnabled="False"/>
             <Button x:Name="btnExit" Content="Exit Screen" HorizontalAlignment="Left" Height="39" Margin="512,253,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnExit_Click" FontFamily="Segoe Print" FontSize="14"/>
