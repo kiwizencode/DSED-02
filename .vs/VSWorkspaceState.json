@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
+    "",
     "\\CODE",
-    "\\CODE\\HotelBookingApp"
+    "\\CODE\\V1.0\\HotelBookingApp",
+    "\\CODE\\V2.0",
+    "\\CODE\\V2.0\\HotelBookingApp"
   ],
+  "SelectedNode": "\\CODE\\V2.0\\HotelBookingApp\\HotelBookingApp.sln",
   "PreviewInSolutionExplorer": false
 }
