@@ -24,6 +24,24 @@ namespace HotelBookingApp.WPF.View
     {
         // controller for Maintain Setting View
         private MaintainSettingController _controller;
+
+        private Guid _ID;
+        public Guid ID_PK
+        {
+            get => _ID;
+            set
+            {
+                _ID = value;
+                txtGUID.Text = _ID.ToString();
+            }
+        }
+
+        public string DESCRIPTION
+        {
+            get => txtDescription.Text;
+            set => txtDescription.Text = value.TrimEnd();
+        }
+
         public MaintainSettingPage()
         {
             InitializeComponent();
@@ -37,26 +55,19 @@ namespace HotelBookingApp.WPF.View
             _controller.LoadView();
         }
 
-        public string DESCRIPTION
+        private void SetButtonAddIsEnabled(bool flag)
         {
-            get => txtDescription.Text;
-            set => txtDescription.Text = value.TrimEnd();
+            // set Add/Edit/Remove button isEnable 
+            btnAdd.IsEnabled = flag;
+            btnEdit.IsEnabled = !flag;
+            btnRemove.IsEnabled = !flag;
         }
-        private Guid _ID;
-        public Guid ID_PK
-        {
-            get => _ID;
-            set
-            {
-                _ID = value;
-                txtGUID.Text = _ID.ToString();
-            }
-        }
+
         # region IMaintainSettingView
 
         public void Add_To_Grid(Abstract_Model obj)
         {
-            grdList.Items.Add((SETTING_Model)obj);
+            grdList.Items.Add(obj);
         }
 
         public void ClearField()
@@ -185,5 +196,10 @@ namespace HotelBookingApp.WPF.View
         }
 
         #endregion
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -47,9 +47,11 @@
             </ListView>
             
             <!-- Button Control -->
-            <Button x:Name="btnAdd" Content="Add Bed" HorizontalAlignment="Left" Height="39" Margin="13,253,0,0" VerticalAlignment="Top" Width="152"
+            <Button x:Name="btnAdd" Content="Add Setting" HorizontalAlignment="Left" Height="39" Margin="13,253,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnAdd_Click" FontFamily="Segoe Print" FontSize="14"/>
-            <Button x:Name="btnRemove" Content="Remove Bed" HorizontalAlignment="Left" Height="40" Margin="174,252,0,0" VerticalAlignment="Top" Width="152"
+            <Button x:Name="btnEdit" Content="Edit Setting" HorizontalAlignment="Left" Height="40" Margin="172,252,0,0" VerticalAlignment="Top" Width="152"
+                            Click="btnEdit_Click" FontFamily="Segoe Print" FontSize="14" IsEnabled="False"/>           
+            <Button x:Name="btnRemove" Content="Remove Setting" HorizontalAlignment="Left" Height="40" Margin="348,252,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnRemove_Click" FontFamily="Segoe Print" FontSize="14" IsEnabled="False"/>
             <Button x:Name="btnExit" Content="Exit Screen" HorizontalAlignment="Left" Height="39" Margin="512,253,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnExit_Click" FontFamily="Segoe Print" FontSize="14"/>            

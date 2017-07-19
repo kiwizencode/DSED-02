@@ -70,7 +70,6 @@ namespace HotelBookingApp.WPF.View
         {
             _controller = new MaintainBedController(this);
             _controller.LoadView();
-            //SetViewButtonIsEnabled(false);
             SetButtonAddIsEnabled(true);
         }
 
@@ -107,8 +106,8 @@ namespace HotelBookingApp.WPF.View
         {
             btnEdit.IsEnabled = false;
             btnRemove.IsEnabled = false;
-            _controller.Edit();
             SetViewButtonIsEnabled(true);
+            _controller.Edit();  
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)

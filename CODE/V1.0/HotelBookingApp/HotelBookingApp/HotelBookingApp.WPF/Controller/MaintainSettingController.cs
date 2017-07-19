@@ -24,13 +24,11 @@ namespace HotelBookingApp.WPF.Controller
         }
 
         #region Implementation of IController Interface
-
         public void AddNew()
         {
             _selected = new SETTING_Model(""/*Description*/);
 
             UpdateViewDetail(_selected);
-
             _view.SetViewButtonIsEnabled(false);
         }
 
@@ -52,7 +50,6 @@ namespace HotelBookingApp.WPF.Controller
         public void Remove()
         {
             Guid? id = this._view.GetSelectedID();
-
             Abstract_Model objToRemove = null;
 
             if (id != null)
@@ -79,7 +76,6 @@ namespace HotelBookingApp.WPF.Controller
                     }
                 }
             }
-
             _view.ClearField();
         }
 
@@ -87,7 +83,6 @@ namespace HotelBookingApp.WPF.Controller
         {
             _view.ClearField();
             _view.SetViewButtonIsEnabled(false);
-            
         }
 
         public void Save()
@@ -99,7 +94,6 @@ namespace HotelBookingApp.WPF.Controller
                 this._data.Create(_selected);
                 _list = _data.Retreive();
                 _selected = (SETTING_Model)_list[_list.Count - 1];
-
                 _view.Add_To_Grid(_selected);
             }
             else
@@ -109,7 +103,6 @@ namespace HotelBookingApp.WPF.Controller
                 _view.Update_Grid(_selected);
             }
             _view.SetSelectedInGrid(_selected);
-
             _view.ClearField();
             _view.SetViewButtonIsEnabled(false);
         }
@@ -137,7 +130,6 @@ namespace HotelBookingApp.WPF.Controller
 
         public void UpdateViewDetail(Abstract_Model obj)
         {
-            
             SETTING_Model selectedUser = obj as SETTING_Model;
             _view.ID_PK = selectedUser.ID_PK;
             _view.DESCRIPTION = selectedUser.DESCRIPTION;
