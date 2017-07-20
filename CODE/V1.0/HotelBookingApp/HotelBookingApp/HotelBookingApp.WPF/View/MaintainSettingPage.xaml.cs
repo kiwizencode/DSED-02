@@ -125,15 +125,12 @@ namespace HotelBookingApp.WPF.View
             }
         }
 
-        public void SetViewButtonIsEnabled(bool flag = true)
+        public void SetViewButtonIsEnabled(bool flag)
         {
-            btnOK.IsEnabled = !flag;
-            btnCancel.IsEnabled = !flag;
+            btnOK.IsEnabled = flag;
+            btnCancel.IsEnabled = flag;
+            txtDescription.IsEnabled = flag;
 
-            txtDescription.IsEnabled = !flag;
-
-            btnAdd.IsEnabled = flag;
-            btnRemove.IsEnabled = flag;
         }
 
         public void Update_Grid(Abstract_Model obj)
