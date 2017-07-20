@@ -15,7 +15,7 @@
 
             <GroupBox Header="Maintain Setting Information :" HorizontalAlignment="Left" Height="192" Margin="10,10,0,0" VerticalAlignment="Top" Width="654" FontFamily="Segoe Print" FontSize="14">
                 <Grid HorizontalAlignment="Left" Height="253" Margin="0,0,0,0" VerticalAlignment="Top" Width="636">
-                    <Label Content="Description :" HorizontalAlignment="Left" Height="41" Margin="104,60,0,0" VerticalAlignment="Top" Width="200"/>
+                    <Label Content="Description :" HorizontalAlignment="Left" Height="41" Margin="104,60,0,0" VerticalAlignment="Top" Width="112"/>
                     <Label Content="GUID :" HorizontalAlignment="Left" Height="30" Margin="24,12,0,0" VerticalAlignment="Top" Width="60"/>
 
                     <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="30" Margin="216,61,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="225" IsEnabled="False"/>
@@ -40,7 +40,7 @@
                     <GridView>
                         <GridView.Columns>
                             <GridViewColumn Header="GUID" Width="375" DisplayMemberBinding="{Binding Path=GUID}"></GridViewColumn>
-                            <GridViewColumn Header="Description" Width="100" DisplayMemberBinding="{Binding Path=DESCRIPTION}"></GridViewColumn>
+                            <GridViewColumn Header="Description" Width="200" DisplayMemberBinding="{Binding Path=DESCRIPTION}"></GridViewColumn>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>
