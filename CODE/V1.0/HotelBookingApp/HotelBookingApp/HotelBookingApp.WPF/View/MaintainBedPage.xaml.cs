@@ -70,17 +70,18 @@ namespace HotelBookingApp.WPF.View
         {
             _controller = new MaintainBedController(this);
             _controller.LoadView();
-            SetButtonAddIsEnabled(true);
+            //btnAdd.IsEnabled = true;
+            //btnEdit.IsEnabled = false;
+            //btnRemove.IsEnabled = false;
+            SetbtnEditRemoveIsEnabled(false);
         }
 
-        private void SetButtonAddIsEnabled(bool flag)
+        private void SetbtnEditRemoveIsEnabled(bool flag, bool btnAddflag = true)
         {
-            // set Add/Edit/Remove button isEnable 
-            btnAdd.IsEnabled = flag;
-            btnEdit.IsEnabled = !flag;
-            btnRemove.IsEnabled = !flag;
+            btnEdit.IsEnabled = flag;
+            btnRemove.IsEnabled = flag;
+            btnAdd.IsEnabled = btnAddflag ? !flag : flag;
         }
-
         #region Events raised back to controller
 
         private void grdList_SelectedIndexChanged(object sender, SelectionChangedEventArgs e)
@@ -94,18 +95,26 @@ namespace HotelBookingApp.WPF.View
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            btnAdd.IsEnabled = false;
+            //btnEdit.IsEnabled = false;
+            //btnRemove.IsEnabled = false;
+            //btnAdd.IsEnabled = false;
+            SetbtnEditRemoveIsEnabled(false, false);
             _controller.AddNew();
         }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             _controller.Revert();
-            SetButtonAddIsEnabled(true);
+            //btnEdit.IsEnabled = false;
+            //btnRemove.IsEnabled = false;
+            //btnAdd.IsEnabled = true;
+            SetbtnEditRemoveIsEnabled(false);
         }
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            btnEdit.IsEnabled = false;
-            btnRemove.IsEnabled = false;
+            //btnEdit.IsEnabled = false;
+            //btnRemove.IsEnabled = false;
+            //btnAdd.IsEnabled = false;
+            SetbtnEditRemoveIsEnabled(false, false);
             SetViewButtonIsEnabled(true);
             _controller.Edit();  
         }
@@ -114,20 +123,22 @@ namespace HotelBookingApp.WPF.View
         {
             NavigationService.GoBack();
         }
-
-        private void btnRemove_Click(object sender, RoutedEventArgs e)
-        {
-            _controller.Remove();
-            SetButtonAddIsEnabled(true);
-        }
-
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             _controller.Save();
-            SetButtonAddIsEnabled(true);
+            //btnEdit.IsEnabled = false;
+            //btnRemove.IsEnabled = false;
+            //btnAdd.IsEnabled = true;
+            SetbtnEditRemoveIsEnabled(false);
         }
-
-
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            _controller.Remove();
+            //btnEdit.IsEnabled = false;
+            //btnRemove.IsEnabled = false;
+            //btnAdd.IsEnabled = true;
+            SetbtnEditRemoveIsEnabled(false);
+        }
 
         #endregion
 
@@ -183,7 +194,8 @@ namespace HotelBookingApp.WPF.View
                 if (item.ID_PK == obj.ID_PK)
                 {
                     grdList.SelectedIndex = i;
-                    SetButtonAddIsEnabled(false);
+                    btnEdit.IsEnabled = true;
+                    btnRemove.IsEnabled = true;
                     break;
                 }
             }
@@ -216,8 +228,6 @@ namespace HotelBookingApp.WPF.View
             txtGUID.Text = "" ;
             txtDescription.Text = string.Empty;
             txtMax_Capacity.Text = "";
-
-            //SetViewButtonIsEnabled();
         }
 
         public void SetViewButtonIsEnabled(Boolean flag)
@@ -228,9 +238,6 @@ namespace HotelBookingApp.WPF.View
             txtDescription.IsEnabled = flag;
             txtMax_Capacity.IsEnabled = flag;
 
-            //btnAdd.IsEnabled = flag;
-            //btnEdit.IsEnabled = !flag;
-            //btnRemove.IsEnabled = !flag;
         }
 
         #endregion

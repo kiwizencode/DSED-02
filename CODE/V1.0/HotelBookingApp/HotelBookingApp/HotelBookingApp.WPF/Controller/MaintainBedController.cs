@@ -21,7 +21,6 @@ namespace HotelBookingApp.WPF.Controller
             _view = view;
             _data = new BED_ADO();
             _list = _data.Retreive();
-            //view.Set_Controller(this);
         }
 
         #region Implementation of IController Interface
@@ -55,11 +54,11 @@ namespace HotelBookingApp.WPF.Controller
         {
             Guid? id = this._view.GetSelectedID();
 
-            BED_Model objToRemove = null;
+            Abstract_Model objToRemove = null;
 
             if (id != null)
             {
-                foreach (BED_Model obj in this._list)
+                foreach (Abstract_Model obj in this._list)
                 {
                     if (obj.ID_PK == id)
                     {
@@ -78,7 +77,7 @@ namespace HotelBookingApp.WPF.Controller
 
                     if (newSelectedIndex > -1 && newSelectedIndex < _list.Count)
                     {
-                        _view.SetSelectedInGrid((BED_Model)_list[newSelectedIndex]);
+                        _view.SetSelectedInGrid((Abstract_Model)_list[newSelectedIndex]);
                     }
                 }
             }
@@ -109,8 +108,8 @@ namespace HotelBookingApp.WPF.Controller
                 // Update 
                 _data.Update(_selected);
                 _view.Update_Grid(_selected);
+                _view.SetSelectedInGrid(_selected);
             }
-            _view.SetSelectedInGrid(_selected);
 
             _view.ClearField();
             _view.SetViewButtonIsEnabled(false);
