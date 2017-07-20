@@ -29,12 +29,12 @@ namespace HotelBookingApp.WPF.Controller
             _selected = new SETTING_Model(""/*Description*/);
 
             UpdateViewDetail(_selected);
-            _view.SetViewButtonIsEnabled(false);
+            _view.SetViewButtonIsEnabled(true);
         }
 
         public void Edit()
         {
-            _view.SetViewButtonIsEnabled(false);
+            _view.SetViewButtonIsEnabled(true);
         }
 
         public void LoadView()

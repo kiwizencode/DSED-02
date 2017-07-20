@@ -11,7 +11,32 @@ namespace HotelBookingApp.ADO
     {
         public void Create(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            SETTING_Model bed = obj as SETTING_Model;
+            string sql = "INSERT INTO [SETTING] ( [DESCRIPTION]) VALUES (@DESCRIPTION); ";
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@DESCRIPTION", bed.DESCRIPTION);
+
+                connection.Open();
+                try
+                {
+                    int rowAffected = command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("ERROR : " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
+            }
         }
 
         public void Delete(Abstract_Model obj)
