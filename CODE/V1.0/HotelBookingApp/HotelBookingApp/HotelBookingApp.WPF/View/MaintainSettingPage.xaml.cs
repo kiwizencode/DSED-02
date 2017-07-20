@@ -60,6 +60,7 @@ namespace HotelBookingApp.WPF.View
         {
             btnEdit.IsEnabled = flag;
             btnRemove.IsEnabled = flag;
+            btnAddRoom.IsEnabled = flag;
             btnAdd.IsEnabled = btnAddflag ? !flag : flag;
         }
 
@@ -120,6 +121,7 @@ namespace HotelBookingApp.WPF.View
                 if (item.ID_PK == obj.ID_PK)
                 {
                     grdList.SelectedIndex = i;
+                    SetbtnEditRemoveIsEnabled(true, false);
                     break;
                 }
             }
@@ -157,18 +159,15 @@ namespace HotelBookingApp.WPF.View
 
         #region Events raised back to controller
 
-        private void grdList_SelectedIndexChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (grdList.SelectedItems.Count > 0)
-            {
-                dynamic item = grdList.SelectedItem;
-                _controller.SelectedModelChanged(item.ID_PK);
-            }
-        }
+
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             SetbtnEditRemoveIsEnabled(false, false);
             _controller.AddNew();
+        }
+        private void btnAddRoom_Click(object sender, RoutedEventArgs e)
+        {
+
         }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
@@ -194,6 +193,14 @@ namespace HotelBookingApp.WPF.View
         {
             _controller.Remove();
             SetbtnEditRemoveIsEnabled(false);
+        }
+        private void grdList_SelectedIndexChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (grdList.SelectedItems.Count > 0)
+            {
+                dynamic item = grdList.SelectedItem;
+                _controller.SelectedModelChanged(item.ID_PK);
+            }
         }
         #endregion
 

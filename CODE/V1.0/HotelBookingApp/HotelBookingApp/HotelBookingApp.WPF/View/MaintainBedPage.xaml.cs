@@ -194,8 +194,10 @@ namespace HotelBookingApp.WPF.View
                 if (item.ID_PK == obj.ID_PK)
                 {
                     grdList.SelectedIndex = i;
-                    btnEdit.IsEnabled = true;
-                    btnRemove.IsEnabled = true;
+                    SetbtnEditRemoveIsEnabled(true, false);
+                    //btnEdit.IsEnabled = true;
+                    //btnRemove.IsEnabled = true;
+                    SetbtnEditRemoveIsEnabled(true, false);
                     break;
                 }
             }

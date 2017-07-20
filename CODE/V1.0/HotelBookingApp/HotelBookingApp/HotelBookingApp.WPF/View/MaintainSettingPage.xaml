@@ -55,8 +55,8 @@
                             Click="btnRemove_Click" FontFamily="Segoe Print" FontSize="14" IsEnabled="False"/>
             <Button x:Name="btnExit" Content="Exit Screen" HorizontalAlignment="Left" Height="39" Margin="512,217,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnExit_Click" FontFamily="Segoe Print" FontSize="14"/>
-            <Button x:Name="btnRemove_Copy" Content="Add Room" HorizontalAlignment="Left" Height="40" Margin="510,270,0,0" VerticalAlignment="Top" Width="152"
-                Click="btnRemove_Click" FontFamily="Segoe Print" FontSize="14" IsEnabled="False"/>
+            <Button x:Name="btnAddRoom" Content="Add Room" HorizontalAlignment="Left" Height="40" Margin="510,270,0,0" VerticalAlignment="Top" Width="152"
+                Click="btnAddRoom_Click" FontFamily="Segoe Print" FontSize="14" IsEnabled="False"/>
         </Grid>
     </Viewbox>
 </Page>
