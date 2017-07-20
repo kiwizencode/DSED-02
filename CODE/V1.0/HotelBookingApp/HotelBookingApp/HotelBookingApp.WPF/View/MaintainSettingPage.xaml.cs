@@ -53,14 +53,14 @@ namespace HotelBookingApp.WPF.View
         {
             _controller = new MaintainSettingController(this);
             _controller.LoadView();
+            SetbtnEditRemoveIsEnabled(false);
         }
 
-        private void SetButtonAddIsEnabled(bool flag)
+        private void SetbtnEditRemoveIsEnabled(bool flag, bool btnAddflag = true)
         {
-            // set Add/Edit/Remove button isEnable 
-            btnAdd.IsEnabled = flag;
-            btnEdit.IsEnabled = !flag;
-            btnRemove.IsEnabled = !flag;
+            btnEdit.IsEnabled = flag;
+            btnRemove.IsEnabled = flag;
+            btnAdd.IsEnabled = btnAddflag ? !flag : flag;
         }
 
         # region IMaintainSettingView
@@ -168,38 +168,38 @@ namespace HotelBookingApp.WPF.View
                 _controller.SelectedModelChanged(item.ID_PK);
             }
         }
-
-
-        private void btnOK_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            SetbtnEditRemoveIsEnabled(false, false);
+            _controller.AddNew();
         }
-
-        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            _controller.Revert();
+            SetbtnEditRemoveIsEnabled(false);
         }
-
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            SetbtnEditRemoveIsEnabled(false, false);
+            SetViewButtonIsEnabled(true);
+            _controller.Edit();
+        }
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
-
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+            _controller.Save();
+            SetbtnEditRemoveIsEnabled(false);
+        }
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            _controller.Remove();
+            SetbtnEditRemoveIsEnabled(false);
+        }
         #endregion
 
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }

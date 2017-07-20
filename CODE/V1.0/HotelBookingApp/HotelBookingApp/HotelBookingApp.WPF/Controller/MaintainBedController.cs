@@ -108,7 +108,7 @@ namespace HotelBookingApp.WPF.Controller
                 // Update 
                 _data.Update(_selected);
                 _view.Update_Grid(_selected);
-                _view.SetSelectedInGrid(_selected);
+                //_view.SetSelectedInGrid(_selected);
             }
 
             _view.ClearField();
