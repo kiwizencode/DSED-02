@@ -89,7 +89,7 @@ namespace HotelBookingApp.ADO
                         {
                             SETTING_Model obj = new SETTING_Model();
                             obj.ID_PK = (Guid)reader[0];
-                            obj.GUID = obj.ID_PK.ToString();
+                            //obj.GUID = obj.ID_PK.ToString();
                             obj.DESCRIPTION = reader[1].ToString().TrimEnd();
 
                             list.Add(obj);

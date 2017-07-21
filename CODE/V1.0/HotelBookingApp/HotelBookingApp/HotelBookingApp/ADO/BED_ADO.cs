@@ -93,7 +93,7 @@ namespace HotelBookingApp.ADO
                         {
                             BED_Model obj = new BED_Model();
                             obj.ID_PK = (Guid)reader[0];
-                            obj.GUID = obj.ID_PK.ToString();
+                            //obj.GUID = obj.ID_PK.ToString();
                             obj.DESCRIPTION = reader[1].ToString().TrimEnd();
                             obj.MAX_CAPACITY = (int)reader[2];
 

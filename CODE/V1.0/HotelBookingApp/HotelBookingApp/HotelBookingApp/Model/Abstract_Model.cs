@@ -7,6 +7,6 @@ namespace HotelBookingApp.Model
     public abstract class Abstract_Model
     {
         public Guid ID_PK;
-        //public string ID_PK;
+        public string GUID { get => ID_PK.ToString(); }
     }
 }

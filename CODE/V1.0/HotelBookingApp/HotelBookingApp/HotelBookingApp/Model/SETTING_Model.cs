@@ -6,7 +6,7 @@ namespace HotelBookingApp.Model
 {
     public class SETTING_Model : Abstract_Model
     {
-        public string GUID { get; set; }
+
         public string DESCRIPTION { get; set; }
 
         public SETTING_Model()

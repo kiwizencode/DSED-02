@@ -6,7 +6,6 @@ namespace HotelBookingApp.Model
 {
     public partial class BED_Model : Abstract_Model
     {
-        public string GUID { get; set; }
         public string DESCRIPTION { get; set; }
         public int MAX_CAPACITY { get; set; }
 
