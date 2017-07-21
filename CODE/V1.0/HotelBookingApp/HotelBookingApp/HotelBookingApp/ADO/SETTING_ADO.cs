@@ -11,13 +11,13 @@ namespace HotelBookingApp.ADO
     {
         public void Create(Abstract_Model obj)
         {
-            SETTING_Model bed = obj as SETTING_Model;
+            SETTING_Model model = obj as SETTING_Model;
             string sql = "INSERT INTO [SETTING] ( [DESCRIPTION]) VALUES (@DESCRIPTION); ";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@DESCRIPTION", bed.DESCRIPTION);
+                command.Parameters.AddWithValue("@DESCRIPTION", model.DESCRIPTION);
 
                 connection.Open();
                 try
@@ -41,7 +41,33 @@ namespace HotelBookingApp.ADO
 
         public void Delete(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            SETTING_Model model = obj as SETTING_Model;
+            string sql = "DELETE [SETTING] WHERE [ID_PK] = @ID_PK ;";
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+
+                command.Parameters.AddWithValue("@ID_PK", model.ID_PK);
+
+                connection.Open();
+                try
+                {
+                    int rowAffected = command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("ERROR : " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
+            }
         }
 
         public IList Retreive()
@@ -88,8 +114,35 @@ namespace HotelBookingApp.ADO
 
         public void Update(Abstract_Model obj)
         {
+            SETTING_Model model = obj as SETTING_Model;
+            string sql = "UPDATE [SETTING] " +
+                         " SET [DESCRIPTION] = @DESCRIPTION " +
+                         " WHERE [ID_PK] = @ID_PK ;";
 
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@DESCRIPTION", model.DESCRIPTION);
+                command.Parameters.AddWithValue("@ID_PK", model.ID_PK);
 
+                connection.Open();
+                try
+                {
+                    int rowAffected = command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("ERROR : " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
+            }
         }
     }
 }

@@ -78,6 +78,9 @@
     <Compile Include="View\MaintainBedPage.xaml.cs">
       <DependentUpon>MaintainBedPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MaintainSettingBedPage.xaml.cs">
+      <DependentUpon>MaintainSettingBedPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MaintainSettingPage.xaml.cs">
       <DependentUpon>MaintainSettingPage.xaml</DependentUpon>
     </Compile>
@@ -97,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MaintainBedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaintainSettingBedPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

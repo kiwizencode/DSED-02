@@ -11,15 +11,15 @@ namespace HotelBookingApp.ADO
     {
         public void Create(Abstract_Model obj)
         {
-            BED_Model bed = obj as BED_Model;
+            BED_Model model = obj as BED_Model;
             string sql = "INSERT INTO [BED] ( [DESCRIPTION],[MAX_CAPACITY]) VALUES" +
                                                 "(@DESCRIPTION,@MAX_CAPACITY); ";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(sql,connection);
-                command.Parameters.AddWithValue("@DESCRIPTION", bed.DESCRIPTION);
-                command.Parameters.AddWithValue("@MAX_CAPACITY", bed.MAX_CAPACITY);
+                command.Parameters.AddWithValue("@DESCRIPTION", model.DESCRIPTION);
+                command.Parameters.AddWithValue("@MAX_CAPACITY", model.MAX_CAPACITY);
 
                 connection.Open();
                 try
@@ -43,7 +43,7 @@ namespace HotelBookingApp.ADO
 
         public void Delete(Abstract_Model obj)
         {
-            BED_Model bed = obj as BED_Model;
+            BED_Model model = obj as BED_Model;
             string sql = "DELETE [BED] " +
                          " WHERE [ID_PK] = @ID_PK ;";
 
@@ -51,7 +51,7 @@ namespace HotelBookingApp.ADO
             {
                 SqlCommand command = new SqlCommand(sql, connection);
 
-                command.Parameters.AddWithValue("@ID_PK", bed.ID_PK);
+                command.Parameters.AddWithValue("@ID_PK", model.ID_PK);
 
                 connection.Open();
                 try
