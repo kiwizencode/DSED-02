@@ -36,7 +36,7 @@ namespace HotelBookingApp.WPF.Controller
         {
             _view.Clear_Grid();
             foreach (Abstract_Model obj in _list)
-                _view.Add_To_Grid(obj);
+                _view.Add_To_Grid(obj);        
         }
 
         public void Remove()

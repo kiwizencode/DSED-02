@@ -39,7 +39,7 @@
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
-                            <GridViewColumn Header="Room Description" Width="375" DisplayMemberBinding="{Binding Path=DESCRIPTION}"></GridViewColumn>
+                            <GridViewColumn Header="Room Description" Width="200" DisplayMemberBinding="{Binding Path=DESCRIPTION}"></GridViewColumn>
                             <GridViewColumn Header="Number" Width="200" DisplayMemberBinding="{Binding Path=NUM}"></GridViewColumn>
                         </GridView.Columns>
                     </GridView>

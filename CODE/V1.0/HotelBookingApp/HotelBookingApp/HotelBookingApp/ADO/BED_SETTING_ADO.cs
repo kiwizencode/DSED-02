@@ -30,8 +30,7 @@ namespace HotelBookingApp.ADO
                                "SETTING.ID_PK AS SETTING_ID, BED.ID_PK AS BED_ID " +
                         "FROM SETTING, BED WHERE(SETTING.ID_PK = @SETTING_ID) ) AS TABLE_1 " +
                 "LEFT OUTER JOIN BED_SETTING ON SETTING_ID = SETTING_FK " +
-                                                "AND BED_ID = BED_FK ;";
-
+                                                "AND BED_ID = BED_FK ;" ;
 
             List<BED_SETTING_Model> list = new List<BED_SETTING_Model>();
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -50,7 +49,10 @@ namespace HotelBookingApp.ADO
                         {
                             BED_SETTING_Model obj = new BED_SETTING_Model();
                             if( reader[0] != DBNull.Value)
+                            {
                                 obj.ID_PK = (Guid)(reader[0]);
+                            }
+                                
                             if( reader[1] != DBNull.Value)
                                 obj.SETTING_FK = (Guid) (reader[1]);
                             if( reader[2] != DBNull.Value)

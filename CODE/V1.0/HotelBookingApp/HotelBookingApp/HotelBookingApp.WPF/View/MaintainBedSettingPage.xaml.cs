@@ -67,13 +67,19 @@ namespace HotelBookingApp.WPF.View
 
         private void grdList_SelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            throw new NotImplementedException();
         }
 
         #region Implement IMaintainBedSettingView Interface code
         public void Add_To_Grid(Abstract_Model obj)
         {
-            grdList.Items.Add((BED_SETTING_Model)obj);
+            //grdList.Items.Add((BED_SETTING_Model)obj);
+            grdList.Items.Add( new {
+                DESCRIPTION = ((BED_SETTING_Model)obj).DESCRIPTION,
+                NUM= ((BED_SETTING_Model)obj).NUM,
+                MODEL=obj
+            });
+
         }
 
         public void ClearField()
