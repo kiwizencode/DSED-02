@@ -109,11 +109,11 @@ namespace HotelBookingApp.WPF.Controller
 
         public void SelectedModelChanged(Guid selected_ID)
         {
-            foreach (SETTING_Model obj in this._list)
+            foreach (Abstract_Model obj in this._list)
             {
                 if (obj.ID_PK == selected_ID)
                 {
-                    _selected = obj;
+                    _selected = obj as SETTING_Model;
                     UpdateViewDetail(obj);
                     _view.SetSelectedInGrid(obj);
                     break;

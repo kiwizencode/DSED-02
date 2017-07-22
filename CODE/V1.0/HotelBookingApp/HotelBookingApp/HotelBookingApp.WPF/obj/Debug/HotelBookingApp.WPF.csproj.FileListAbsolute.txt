@@ -61,4 +61,3 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\Hot
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.csproj.GenerateResource.Cache
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\View\MaintainBedSettingPage.g.cs
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\View\MaintainBedSettingPage.baml
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.csprojResolveAssemblyReference.cache

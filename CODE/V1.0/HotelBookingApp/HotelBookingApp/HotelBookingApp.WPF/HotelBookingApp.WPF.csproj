@@ -66,10 +66,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\IController.cs" />
+    <Compile Include="Controller\IMaintainBedSettingView.cs" />
     <Compile Include="Controller\IMaintainBedView.cs" />
     <Compile Include="Controller\IMaintainSettingView.cs" />
     <Compile Include="Controller\IMaintainView.cs" />
     <Compile Include="Controller\MaintainBedController.cs" />
+    <Compile Include="Controller\MaintainBedSettingController.cs" />
     <Compile Include="Controller\MaintainSettingController.cs" />
     <Compile Include="Model\RoomSettingModel.cs" />
     <Compile Include="View\MainPage.xaml.cs">

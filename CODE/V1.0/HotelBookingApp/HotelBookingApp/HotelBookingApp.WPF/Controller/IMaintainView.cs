@@ -11,7 +11,6 @@ namespace HotelBookingApp.WPF.Controller
     {
         Guid ID_PK { get; set; }
 
-
         void Add_To_Grid(Abstract_Model obj);
         void Clear_Grid();
         Guid? GetSelectedID();

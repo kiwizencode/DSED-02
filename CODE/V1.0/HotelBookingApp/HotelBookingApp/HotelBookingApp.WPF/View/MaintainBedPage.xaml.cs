@@ -25,17 +25,16 @@ namespace HotelBookingApp.WPF.View
     {
         private MaintainBedController _controller;
 
-        private Guid _ID;
-        public Guid ID_PK {
-            get => _ID ;
-            set {
-                _ID = value;
-                txtGUID.Text = _ID.ToString();
-            }
-        }
+        #region Implement IMaintainBedView Interface code
         public string DESCRIPTION {
             get => txtDescription.Text ;
             set => txtDescription.Text=value.TrimEnd();
+        }
+        private Guid _ID;
+        public Guid ID_PK
+        {
+            get => _ID;
+            set { _ID = value; txtGUID.Text = _ID.ToString(); }
         }
         public int MAX_CAPACITY {
             get
@@ -58,6 +57,7 @@ namespace HotelBookingApp.WPF.View
             }
             
         }
+        #endregion
 
         public MaintainBedPage()
         {
@@ -149,7 +149,12 @@ namespace HotelBookingApp.WPF.View
         {
             grdList.Items.Add((BED_Model)obj);
         }
-
+        public void ClearField()
+        {
+            txtGUID.Text = "";
+            txtDescription.Text = string.Empty;
+            txtMax_Capacity.Text = "";
+        }
         public void Clear_Grid()
         {
             grdList.Items.Clear();
@@ -225,12 +230,7 @@ namespace HotelBookingApp.WPF.View
             }
         }
 
-        public void ClearField()
-        {
-            txtGUID.Text = "" ;
-            txtDescription.Text = string.Empty;
-            txtMax_Capacity.Text = "";
-        }
+
 
         public void SetViewButtonIsEnabled(Boolean flag)
         {

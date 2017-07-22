@@ -35,7 +35,6 @@ namespace HotelBookingApp.WPF.View
                 txtGUID.Text = _ID.ToString();
             }
         }
-
         public string DESCRIPTION
         {
             get => txtDescription.Text;
@@ -45,7 +44,6 @@ namespace HotelBookingApp.WPF.View
         public MaintainSettingPage()
         {
             InitializeComponent();
-
             InitializeController();
         }
 
@@ -167,6 +165,8 @@ namespace HotelBookingApp.WPF.View
         }
         private void btnAddRoom_Click(object sender, RoutedEventArgs e)
         {
+            MaintainBedSettingPage page = new MaintainBedSettingPage(this);
+            this.NavigationService.Navigate(page);
 
         }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
