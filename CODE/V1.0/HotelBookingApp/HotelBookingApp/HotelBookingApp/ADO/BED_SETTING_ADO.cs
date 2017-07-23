@@ -52,10 +52,17 @@ namespace HotelBookingApp.ADO
                             {
                                 obj.ID_PK = (Guid)(reader[0]);
                             }
-                                
-                            if( reader[1] != DBNull.Value)
-                                obj.SETTING_FK = (Guid) (reader[1]);
-                            if( reader[2] != DBNull.Value)
+
+                            if(reader[1] != DBNull.Value)
+                                obj.SETTING_FK = (Guid)(reader[1]);
+                            else
+                            {
+                                obj.SETTING_FK = (Guid)ID;
+                            }
+                            
+                            //
+
+                            if ( reader[2] != DBNull.Value)
                                 obj.BED_FK = (Guid) (reader[2]);
                             obj.DESCRIPTION = reader[3].ToString().Trim();
                             obj.NUM = (int)reader[4];

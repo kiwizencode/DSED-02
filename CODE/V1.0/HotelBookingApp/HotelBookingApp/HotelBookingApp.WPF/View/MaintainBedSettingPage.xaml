@@ -16,10 +16,17 @@
             <GroupBox Header="Maintain Setting Information :" HorizontalAlignment="Left" Height="236" Margin="10,10,0,0" VerticalAlignment="Top" Width="654" FontFamily="Segoe Print" FontSize="14">
                 <Grid HorizontalAlignment="Left" Height="199" Margin="0,0,0,0" VerticalAlignment="Top" Width="636">
                     <Label Content="Description :" HorizontalAlignment="Left" Height="41" Margin="104,60,0,0" VerticalAlignment="Top" Width="112"/>
-                    <Label Content="GUID :" HorizontalAlignment="Left" Height="30" Margin="24,12,0,0" VerticalAlignment="Top" Width="60"/>
-
                     <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="30" Margin="216,61,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="225" IsEnabled="False"/>
+
+                    <Label Content="GUID :" HorizontalAlignment="Left" Height="30" Margin="24,12,0,0" VerticalAlignment="Top" Width="60"/>
                     <TextBox x:Name="txtGUID" HorizontalAlignment="Left" Height="30" Margin="89,15,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="352" IsEnabled="False" FontSize="12"/>
+
+                    <Label Content="Room Description :" HorizontalAlignment="Left" Height="41" Margin="56,108,0,0" VerticalAlignment="Top" Width="152"/>
+                    <TextBox x:Name="txtRoomDescription" HorizontalAlignment="Left" Height="30" Margin="216,109,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="225" IsEnabled="False"/>
+
+                    <Label Content="Count :" HorizontalAlignment="Left" Height="41" Margin="140,154,0,0" VerticalAlignment="Top" Width="66"/>
+                    <TextBox x:Name="txtCount" HorizontalAlignment="Left" Height="30" Margin="216,155,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="225" IsEnabled="False"/>
+
                     <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="50" Margin="456,17,0,0" VerticalAlignment="Top" Width="152"
                             Click="btnOK_Click" IsEnabled="False"/>
                     <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="50" Margin="456,86,0,0" VerticalAlignment="Top" Width="152"
@@ -40,7 +47,7 @@
                     <GridView>
                         <GridView.Columns>
                             <GridViewColumn Header="Room Description" Width="200" DisplayMemberBinding="{Binding Path=DESCRIPTION}"></GridViewColumn>
-                            <GridViewColumn Header="Number" Width="200" DisplayMemberBinding="{Binding Path=NUM}"></GridViewColumn>
+                            <GridViewColumn Header="Count" Width="200" DisplayMemberBinding="{Binding Path=NUM}"></GridViewColumn>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>

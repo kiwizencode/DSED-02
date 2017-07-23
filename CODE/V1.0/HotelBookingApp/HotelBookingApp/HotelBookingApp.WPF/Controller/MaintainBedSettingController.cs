@@ -56,17 +56,50 @@ namespace HotelBookingApp.WPF.Controller
 
         public void SelectedModelChanged(Guid selected_ID)
         {
-            throw new NotImplementedException();
+            foreach (BED_SETTING_Model obj in this._list)
+            {
+                if (obj.ID_PK == selected_ID)
+                {
+                    _selected = obj;
+                    UpdateViewDetail(obj);
+                    _view.SetSelectedInGrid(obj);
+                    break;
+                }
+            }
+        }
+
+        public void SelectedModelChanged(string des)
+        {
+            foreach (BED_SETTING_Model obj in this._list)
+            {
+                if (obj.DESCRIPTION == des)
+                {
+                    _selected = obj;
+                    UpdateViewDetail(obj);
+                    _view.SetSelectedInGrid(obj);
+                    break;
+                }
+            }
         }
 
         public void UpdateModelDetail(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            BED_SETTING_Model selectedUser = obj as BED_SETTING_Model;
+            selectedUser.ID_PK = _view.ID_PK;
+            selectedUser.SETTING_FK = _view.SETTING_FK;
+            selectedUser.BED_FK = _view.BED_FK;
+            selectedUser.DESCRIPTION = _view.DESCRIPTION;
+            selectedUser.NUM = _view.NUM;
         }
 
         public void UpdateViewDetail(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            BED_SETTING_Model selectedUser = obj as BED_SETTING_Model;
+            _view.ID_PK = selectedUser.ID_PK;
+            //_view.SETTING_FK = selectedUser.SETTING_FK;
+            _view.BED_FK = selectedUser.BED_FK;
+            _view.DESCRIPTION = selectedUser.DESCRIPTION;
+            _view.NUM = selectedUser.NUM;
         }
     }
 }

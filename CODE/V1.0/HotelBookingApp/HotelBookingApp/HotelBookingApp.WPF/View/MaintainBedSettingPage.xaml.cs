@@ -27,23 +27,49 @@ namespace HotelBookingApp.WPF.View
 
         #region Implement IMaintainBedSettingView Interface code
         public Guid SETTING_FK { get; set; }
-        public Guid BED_FK { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int NUM { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Guid ID_PK { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Guid BED_FK { get ; set ; }
+        public Guid ID_PK { get; set; }
+        public int NUM
+        {
+            get
+            {
+                int i;
+                if (int.TryParse(txtCount.Text, out i))
+                    return i;
+                else
+                    return -1;
+            }
+
+            set
+            {
+                string text = new string(value.ToString().ToCharArray().Where(c => char.IsDigit(c)).ToArray());
+                int i;
+                if (int.TryParse(text, out i))
+                    txtCount.Text = i.ToString();
+                else
+                    txtCount.Text = "0";
+            }
+        }
+
+
         #endregion
+
+        public string DESCRIPTION
+        {
+            get => txtRoomDescription.Text;
+            set { txtRoomDescription.Text = value; }
+        }
+
+
 
         public MaintainBedSettingPage(IMaintainSettingView view)
         {
-
-
             InitializeComponent();
 
             _parent_view = view;
             SETTING_FK = view.ID_PK;
             txtGUID.Text = view.ID_PK.ToString();
             txtDescription.Text = view.DESCRIPTION;
-
-
             InitializeController();
         }
 
@@ -67,10 +93,16 @@ namespace HotelBookingApp.WPF.View
 
         private void grdList_SelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (grdList.SelectedItems.Count > 0)
+            {
+                int i = grdList.SelectedIndex;
+                dynamic item = grdList.Items[i];
+                _controller.SelectedModelChanged(item.MODEL.DESCRIPTION);
+            }
         }
 
         #region Implement IMaintainBedSettingView Interface code
+
         public void Add_To_Grid(Abstract_Model obj)
         {
             //grdList.Items.Add((BED_SETTING_Model)obj);
@@ -104,7 +136,15 @@ namespace HotelBookingApp.WPF.View
 
         public void SetSelectedInGrid(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < grdList.Items.Count; i++)
+            {
+                dynamic item = grdList.Items[i];
+                if (item.MODEL.DESCRIPTION == ((BED_SETTING_Model)obj).DESCRIPTION)
+                {
+                    grdList.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         public void SetViewButtonIsEnabled(bool flag)
