@@ -13,7 +13,5 @@ namespace HotelBookingApp.WPF.Controller
         Guid BED_FK { get; set; }
         int NUM { get; set; }
         string DESCRIPTION { get; set; }
-
-        void Refresh_Grid(IList list);
     }
 }

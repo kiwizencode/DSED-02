@@ -35,11 +35,10 @@ namespace HotelBookingApp.WPF.Controller
         public void LoadView()
         {
             _view.Clear_Grid();
-            
+            _view.ClearField();
             foreach (Abstract_Model obj in _list)
                 _view.Add_To_Grid(obj);        
             
-            //_view.Refresh_Grid(_list);
         }
 
         public void Remove()
@@ -59,10 +58,15 @@ namespace HotelBookingApp.WPF.Controller
             if (_selected.ID_PK.ToString() == (new Guid()).ToString())
             {
                 // Add New Record
+                this._data.Create(_selected);
             }
             else
             {
-                // Update Record
+                if (_selected.NUM > 0)
+                    // Update Record
+                    this._data.Update(_selected);
+                else
+                    this._data.Delete(_selected);
             }
             _view.Update_Grid(_selected);
             _view.SetSelectedInGrid(_selected);

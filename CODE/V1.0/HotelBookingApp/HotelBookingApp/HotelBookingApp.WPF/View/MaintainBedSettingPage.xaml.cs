@@ -52,7 +52,6 @@ namespace HotelBookingApp.WPF.View
             }
         }
 
-
         #endregion
 
         public string DESCRIPTION
@@ -127,13 +126,6 @@ namespace HotelBookingApp.WPF.View
         public Guid? GetSelectedID()
         {
             throw new NotImplementedException();
-        }
-
-        public void Refresh_Grid(IList list)
-        {
-            grdList.Items.Clear();
-            grdList.ItemsSource = list;
-            grdList.Items.Refresh();
         }
 
         public void Remove_From_Grid(Abstract_Model obj)

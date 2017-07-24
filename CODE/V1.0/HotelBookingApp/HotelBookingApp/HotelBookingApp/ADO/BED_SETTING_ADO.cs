@@ -11,12 +11,65 @@ namespace HotelBookingApp.ADO
     {
         public void Create(Abstract_Model obj)
         {
-            throw new NotImplementedException();
-        }
+            BED_SETTING_Model model = obj as BED_SETTING_Model;
+            string sql = "INSERT INTO [BED_SETTING] ([SETTING_FK], [BED_FK], [NUM]) " + 
+                                           " VALUES (@SETTING,@BED,@NUM); ";
 
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@SETTING", model.SETTING_FK);
+                command.Parameters.AddWithValue("@BED", model.BED_FK);
+                command.Parameters.AddWithValue("@NUM", model.NUM);
+
+                connection.Open();
+                try
+                {
+                    int rowAffected = command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("ERROR : " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
         public void Delete(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            BED_SETTING_Model model = obj as BED_SETTING_Model;
+            string sql = "DELETE [BED_SETTING] WHERE [ID_PK] = @ID_PK ;";
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+
+                command.Parameters.AddWithValue("@ID_PK", model.ID_PK);
+
+                connection.Open();
+                try
+                {
+                    int rowAffected = command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("ERROR : " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
+            }
         }
 
         public IList Retreive()
@@ -88,7 +141,39 @@ namespace HotelBookingApp.ADO
         }
         public void Update(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            BED_SETTING_Model model = obj as BED_SETTING_Model;
+            string sql = "UPDATE [BED_SETTING] "  +
+                         " SET [SETTING_FK] = @SETTING," +
+                              "[BED_FK] = @BED, " +
+                               "[NUM] = @NUM " +
+                         " WHERE [ID_PK] = @ID_PK ;";
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@SETTING", model.SETTING_FK);
+                command.Parameters.AddWithValue("@BED", model.BED_FK);
+                command.Parameters.AddWithValue("@NUM", model.NUM);
+                command.Parameters.AddWithValue("@ID_PK", model.ID_PK);
+
+                connection.Open();
+                try
+                {
+                    int rowAffected = command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("ERROR : " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == System.Data.ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
+            }
         }
     }
 }

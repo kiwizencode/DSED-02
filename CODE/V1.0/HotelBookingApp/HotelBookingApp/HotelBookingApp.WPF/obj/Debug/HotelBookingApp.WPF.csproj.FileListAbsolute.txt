@@ -33,6 +33,7 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\HotelBookingApp\HotelBoo
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\HotelBookingApp.WPF.exe.config
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\HotelBookingApp.WPF.exe
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\HotelBookingApp.WPF.pdb
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\System.ValueTuple.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Core.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Platform.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\Xamarin.Forms.Xaml.dll
@@ -61,5 +62,3 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\Hot
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.csproj.GenerateResource.Cache
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.exe
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.pdb
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\obj\Debug\HotelBookingApp.WPF.csprojResolveAssemblyReference.cache
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-02\CODE\V1.0\HotelBookingApp\HotelBookingApp\HotelBookingApp.WPF\bin\Debug\System.ValueTuple.dll
