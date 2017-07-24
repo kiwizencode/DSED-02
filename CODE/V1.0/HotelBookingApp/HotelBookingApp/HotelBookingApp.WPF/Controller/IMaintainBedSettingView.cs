@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,7 @@ namespace HotelBookingApp.WPF.Controller
         Guid BED_FK { get; set; }
         int NUM { get; set; }
         string DESCRIPTION { get; set; }
+
+        void Refresh_Grid(IList list);
     }
 }

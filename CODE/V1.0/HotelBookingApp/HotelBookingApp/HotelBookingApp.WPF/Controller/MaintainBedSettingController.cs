@@ -35,8 +35,11 @@ namespace HotelBookingApp.WPF.Controller
         public void LoadView()
         {
             _view.Clear_Grid();
+            
             foreach (Abstract_Model obj in _list)
                 _view.Add_To_Grid(obj);        
+            
+            //_view.Refresh_Grid(_list);
         }
 
         public void Remove()
@@ -46,26 +49,30 @@ namespace HotelBookingApp.WPF.Controller
 
         public void Revert()
         {
-            throw new NotImplementedException();
+            _view.ClearField();
+            _view.SetViewButtonIsEnabled(false);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            UpdateModelDetail(_selected);
+            if (_selected.ID_PK.ToString() == (new Guid()).ToString())
+            {
+                // Add New Record
+            }
+            else
+            {
+                // Update Record
+            }
+            _view.Update_Grid(_selected);
+            _view.SetSelectedInGrid(_selected);
+            _view.ClearField();
+            _view.SetViewButtonIsEnabled(false);
         }
 
         public void SelectedModelChanged(Guid selected_ID)
         {
-            foreach (BED_SETTING_Model obj in this._list)
-            {
-                if (obj.ID_PK == selected_ID)
-                {
-                    _selected = obj;
-                    UpdateViewDetail(obj);
-                    _view.SetSelectedInGrid(obj);
-                    break;
-                }
-            }
+            throw new NotImplementedException();
         }
 
         public void SelectedModelChanged(string des)

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HotelBookingApp.Model;
+using System.Collections;
 
 namespace HotelBookingApp.WPF.View
 {
@@ -60,8 +61,6 @@ namespace HotelBookingApp.WPF.View
             set { txtRoomDescription.Text = value; }
         }
 
-
-
         public MaintainBedSettingPage(IMaintainSettingView view)
         {
             InitializeComponent();
@@ -80,17 +79,17 @@ namespace HotelBookingApp.WPF.View
         }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            //throw new NotImplementedException();
+            _controller.Revert();
         }
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-
+            _controller.Save();
         }
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
-
         private void grdList_SelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
             if (grdList.SelectedItems.Count > 0)
@@ -106,17 +105,18 @@ namespace HotelBookingApp.WPF.View
         public void Add_To_Grid(Abstract_Model obj)
         {
             //grdList.Items.Add((BED_SETTING_Model)obj);
+            
             grdList.Items.Add( new {
                 DESCRIPTION = ((BED_SETTING_Model)obj).DESCRIPTION,
                 NUM= ((BED_SETTING_Model)obj).NUM,
                 MODEL=obj
             });
-
         }
 
         public void ClearField()
         {
-            throw new NotImplementedException();
+            txtRoomDescription.Text = string.Empty;
+            txtCount.Text = string.Empty;
         }
 
         public void Clear_Grid()
@@ -127,6 +127,13 @@ namespace HotelBookingApp.WPF.View
         public Guid? GetSelectedID()
         {
             throw new NotImplementedException();
+        }
+
+        public void Refresh_Grid(IList list)
+        {
+            grdList.Items.Clear();
+            grdList.ItemsSource = list;
+            grdList.Items.Refresh();
         }
 
         public void Remove_From_Grid(Abstract_Model obj)
@@ -142,6 +149,8 @@ namespace HotelBookingApp.WPF.View
                 if (item.MODEL.DESCRIPTION == ((BED_SETTING_Model)obj).DESCRIPTION)
                 {
                     grdList.SelectedIndex = i;
+
+                    SetViewButtonIsEnabled(true);
                     break;
                 }
             }
@@ -149,12 +158,52 @@ namespace HotelBookingApp.WPF.View
 
         public void SetViewButtonIsEnabled(bool flag)
         {
-            throw new NotImplementedException();
+            btnCancel.IsEnabled = flag;
+            btnOK.IsEnabled = flag;
+            txtCount.IsEnabled = flag;
         }
 
         public void Update_Grid(Abstract_Model obj)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            //dynamic rowToUpdate = null;
+
+            for(int i = 0; i < grdList.Items.Count;i++)
+            {
+                dynamic row = grdList.Items[i];
+                if (row.DESCRIPTION == ((BED_SETTING_Model)obj).DESCRIPTION)
+                {
+                    //rowToUpdate = row;
+
+                    grdList.Items[i] = new {
+                        DESCRIPTION = ((BED_SETTING_Model)obj).DESCRIPTION,
+                        NUM = ((BED_SETTING_Model)obj).NUM,
+                        MODEL = obj
+                    };
+
+                    break;
+                }
+            }
+            /*
+            foreach (dynamic row in grdList.Items)
+            {
+                if (row.DESCRIPTION == ((BED_SETTING_Model)obj).DESCRIPTION)
+                {
+                    rowToUpdate = row;
+                    break;
+                }
+            }
+            
+            if (rowToUpdate != null)
+            {
+                //rowToUpdate.NUM = ((BED_SETTING_Model)obj).NUM;
+                //rowToUpdate.DESCRIPTION = ((BED_SETTING_Model)obj).DESCRIPTION;
+                //rowToUpdate.MODEL = obj;
+                rowToUpdate.NUM = rowToUpdate.MODEL.NUM;
+                rowToUpdate.DESCRIPTION = rowToUpdate.MODEL.DESCRIPTION;
+                grdList.Items.Refresh();
+            }
+            */
         }
         #endregion
     }
